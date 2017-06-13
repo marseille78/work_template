@@ -9,6 +9,7 @@
     * [Адаптивная верстка](https://github.com/marseille78/work_template#Адаптивная-верстка)
     * [Колоночная структура](https://github.com/marseille78/work_template#Колоночная-структура)
     * [Именование файлов стилей](https://github.com/marseille78/work_template#Именование-файлов-стилей)
+    * [Приставки файлов [имя-категории] файлов по разделам](https://github.com/marseille78/work_template#Приставки-файлов-имя-категории-файлов-по-разделам)
     * [Именование компонентов и их миксинов](https://github.com/marseille78/work_template#Именование-компонентов-и-их-миксинов)
     * [Placeholders](https://github.com/marseille78/work_template#placeholders)
     * [Именование классов](https://github.com/marseille78/work_template#Именование-классов)
@@ -16,7 +17,7 @@
     * [Структура](https://github.com/marseille78/work_template#Структура)
     * [Переменные в шаблонах](https://github.com/marseille78/work_template#Переменные-в-шаблонах)
     * [Стандартные шаблоны](https://github.com/marseille78/work_template#Стандартные-шаблоны)
-* [Сборка проекта]
+* [Сборка проекта](https://github.com/marseille78/work_template#Сборка-проекта)
 
 ## CSS
 

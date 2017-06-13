@@ -1,0 +1,9 @@
+// @param string $type - type of item for center [text|block]
+@mixin helpers-centered($type){
+  @if $type == block{
+    margin-left: auto;
+    margin-right: auto;
+  } @else if $type == text{
+    text-align: center;
+  }
+}

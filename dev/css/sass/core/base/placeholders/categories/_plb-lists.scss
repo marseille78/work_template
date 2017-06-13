@@ -1,0 +1,91 @@
+// Placeholders lists
+
+// @include plb-lists-xs;
+// @include plb-lists-sm;
+// @include plb-lists-md;
+// @include plb-lists-lg;
+// @include plb-lists-xl;
+// @include plb-lists-xso;
+// @include plb-lists-mob;
+// @include plb-lists-dev;
+// @include plb-lists-smo;
+// @include plb-lists-mdo;
+// @include plb-lists-lgo;
+
+@mixin plb-lists-xs{
+  // START MIXIN
+  @include plb-lists-defs-xs;
+
+  // END MIXIN
+  @include pl-lists-xs;
+}
+@mixin plb-lists-sm{
+  // START MIXIN
+  @include plb-lists-defs-sm;
+
+  // END MIXIN
+  @include pl-lists-sm;
+}
+@mixin plb-lists-md{
+  // START MIXIN
+  @include plb-lists-defs-md;
+
+  // END MIXIN
+  @include pl-lists-md;
+}
+@mixin plb-lists-lg{
+  // START MIXIN
+  @include plb-lists-defs-lg;
+
+  // END MIXIN
+  @include pl-lists-lg;
+}
+@mixin plb-lists-xl{
+  // START MIXIN
+  @include plb-lists-defs-xl;
+
+  // END MIXIN
+  @include pl-lists-xl;
+}
+@mixin plb-lists-xso{
+  // START MIXIN
+  @include plb-lists-defs-xso;
+
+  // END MIXIN
+  @include pl-lists-xso;
+}
+@mixin plb-lists-mob{
+  // START MIXIN
+  @include plb-lists-defs-mob;
+
+  // END MIXIN
+  @include pl-lists-mob;
+}
+@mixin plb-lists-dev{
+  // START MIXIN
+  @include plb-lists-defs-dev;
+
+  // END MIXIN
+  @include pl-lists-dev;
+}
+@mixin plb-lists-smo{
+  // START MIXIN
+  @include plb-lists-defs-smo;
+
+  // END MIXIN
+  @include pl-lists-smo;
+}
+@mixin plb-lists-mdo{
+  // START MIXIN
+  @include plb-lists-defs-mdo;
+
+  // END MIXIN
+  @include pl-lists-mdo;
+}
+@mixin plb-lists-lgo{
+  // START MIXIN
+  @include plb-lists-defs-lgo;
+
+  // END MIXIN
+  @include pl-lists-lgo;
+}

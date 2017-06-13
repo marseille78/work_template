@@ -1,0 +1,72 @@
+// @include plb_blocks_example-name-xs;
+// @include plb_blocks_example-name-sm;
+// @include plb_blocks_example-name-md;
+// @include plb_blocks_example-name-lg;
+// @include plb_blocks_example-name-xl;
+// @include plb_blocks_example-name-xso;
+// @include plb_blocks_example-name-mob;
+// @include plb_blocks_example-name-dev;
+// @include plb_blocks_example-name-smo;
+// @include plb_blocks_example-name-mdo;
+// @include plb_blocks_example-name-lgo;
+
+@mixin plb_blocks_example-name{
+  //some css was here
+}
+
+//---------------------------//
+@mixin plb_blocks_example-name-xs{
+  %plb_blocks_example-name-xs{
+    @include plb_blocks_example-name;
+  }
+}
+@mixin plb_blocks_example-name-sm{
+  %plb_blocks_example-name-sm{
+    @include plb_blocks_example-name;
+  }
+}
+@mixin plb_blocks_example-name-md{
+  %plb_blocks_example-name-md{
+    @include plb_blocks_example-name;
+  }
+}
+@mixin plb_blocks_example-name-lg{
+  %plb_blocks_example-name-lg{
+    @include plb_blocks_example-name;
+  }
+}
+@mixin plb_blocks_example-name-xl{
+  %plb_blocks_example-name-xl{
+    @include plb_blocks_example-name;
+  }
+}
+@mixin plb_blocks_example-name-xso{
+  %plb_blocks_example-name-xso{
+    @include plb_blocks_example-name;
+  }
+}
+@mixin plb_blocks_example-name-mob{
+  %plb_blocks_example-name-mob{
+    @include plb_blocks_example-name;
+  }
+}
+@mixin plb_blocks_example-name-dev{
+  %plb_blocks_example-name-dev{
+    @include plb_blocks_example-name;
+  }
+}
+@mixin plb_blocks_example-name-smo{
+  %plb_blocks_example-name-smo{
+    @include plb_blocks_example-name;
+  }
+}
+@mixin plb_blocks_example-name-mdo{
+  %plb_blocks_example-name-mdo{
+    @include plb_blocks_example-name;
+  }
+}
+@mixin plb_blocks_example-name-lgo{
+  %plb_blocks_example-name-lgo{
+    @include plb_blocks_example-name;
+  }
+}

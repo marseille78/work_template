@@ -1,0 +1,85 @@
+// @include str_example-xs();
+// @include str_example-sm();
+// @include str_example-md();
+// @include str_example-lg();
+// @include str_example-xl();
+// @include str_example-dev();
+// @include str_example-mob();
+// @include str_example-xso();
+// @include str_example-smo();
+// @include str_example-mdo();
+// @include str_example-lgo();
+
+@mixin str_example-xs(){
+/** str_example xs */
+    .example{}
+}
+@mixin str_example-sm(){
+/** str_example sm */
+    .example{}
+}
+@mixin str_example-md(){
+/** str_example md */
+    .example{}
+}
+@mixin str_example-lg(){
+/** str_example lg */
+    .example{}
+}
+@mixin str_example-xl(){
+/** str_example xl */
+    .example{}
+}
+@mixin str_example-dev(){
+    /** str_example dev */
+    .example{}
+}
+@mixin str_example-mob(){
+/** str_example mob */
+    .example{}
+}
+@mixin str_example-xso(){
+    /** str_example xso */
+    .example{}
+}
+@mixin str_example-smo(){
+/** str_example smo */
+    .example{}
+}
+@mixin str_example-mdo(){
+/** str_example mdo */
+    .example{}
+}
+@mixin str_example-lgo(){
+/** str_example lgo */
+    .example{}
+}
+// BLOCK VARIABLES BELOW
+// fn strexa
+$e_strExa:(
+  c: color(empty),
+
+  bgc: bgc(empty),
+  bgi: bgi(empty),
+
+  w: width(empty),
+  h: height(empty),
+
+  fw: font(w,empty),
+  ff: font(f,empty),
+  fz: font(s,empty),
+  lh: font(lh,empty),
+
+  pl: ind(empty),
+  pr: ind(empty),
+  pt: ind(empty),
+  pb: ind(empty),
+
+  ml: ind(empty),
+  mr: ind(empty),
+  mt: ind(empty),
+  mb: ind(empty)
+);
+@function strexa($var){
+    @return map_get($e_strExa,$var);
+}

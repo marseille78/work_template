@@ -1,0 +1,63 @@
+// Global Project variables
+// name started with 'g_' and use camelCamp name style
+
+// FN font
+$g_FontWeight:(
+        xthink:200,
+        think:300,
+        regular:400,
+        medium:500,
+        sbold:600,
+        bold:700,
+        xbold:900
+);
+$g_FontFamely:(
+        base: "Arial, sana-serif"
+);
+$g_LineHeight:(
+
+);
+$g_FontSize:(
+
+);
+
+// FN color
+$g_Color:(
+        // DEF
+        accent: #006dff,
+        border: #f7f7fe,
+        link: #006dff,
+        // OTHER
+);
+
+// FN width
+$g_Width:(
+
+);
+
+// FN height
+$g_Height:(
+
+);
+
+// FN size - global edit
+$g_Size:(
+        // DEF
+        bdrs: 0px
+        // OTHER
+);
+
+// FN ind
+$g_Indentations:(
+
+);
+
+// FN bgc
+$g_BackgroundColors:(
+
+);
+
+// FN bgi
+$g_BackgroundImages:(
+
+);

@@ -1,0 +1,26 @@
+// @param string $viewport - media section in class name
+// @param number $order - flex items order counter
+@mixin structure-grid-flex($viewport:'',$order:10){
+  $viewport: add-dash($viewport);
+  /** .col-flex#{$viewport} */
+  .col-flex#{$viewport} {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    @if $__useBXZForAll == 0 {
+      box-sizing: border-box;
+    }
+  }
+  .col-flex#{$viewport}.clearfix:before,
+  .col-flex#{$viewport}.clearfix:after{
+    display: none;
+  }
+
+  @if $order > 0{
+    @for $i from 1 through $order {
+      .col-flex-order#{$viewport}-#{$i} {
+        order: $i;
+      }
+    }
+  }
+}

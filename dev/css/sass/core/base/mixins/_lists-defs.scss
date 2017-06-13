@@ -1,0 +1,61 @@
+// @param string $media - media section name [xs,sm,md,...]. mainly used for @extend placeholders
+// @param bool $line - use or not
+// @param bool $linef- use or not $line with float
+// @param bool $jf - use or not
+// @param bool $no - use or not
+// @param string $suffix - add sufix for class names
+@mixin lists-defs($media:xs,$line:1,$linef:0,$jf:1,$no:1,$sufix:''){
+  @if $no == 1 {
+    .no-list#{add-dash($sufix)} {
+      @extend %plb-lists-defs#{add-dash($media)};
+
+      & > li {
+        display: block;
+      }
+    }
+  }
+
+  @if $line == 1 {
+    .list-line#{add-dash($sufix)} {
+      @extend %plb-lists-defs#{add-dash($media)};
+
+      & > li {
+        display: inline-block;
+      }
+    }
+  }
+
+  @if $linef == 1 {
+    .list-linef#{add-dash($sufix)} {
+      @extend %plb-lists-defs#{add-dash($media)};
+
+      & > li {
+        display: block;
+        float: left;
+      }
+    }
+  }
+
+  @if $jf == 1 {
+    .list-jf#{add-dash($sufix)} {
+      @extend %plb-lists-defs#{add-dash($media)};
+
+      height: 1px;
+      line-height: 1px;
+      text-align: justify;
+
+      & > li,
+      &:after {
+        display: inline-block;
+        line-height: 1.25em; //TODO: var default line height
+      }
+      &:after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        line-height: 0;
+        overflow: hidden;
+      }
+    }
+  }
+}

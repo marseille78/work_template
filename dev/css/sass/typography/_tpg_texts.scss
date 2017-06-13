@@ -1,0 +1,87 @@
+// @include tpg_texts-xs();
+// @include tpg_texts-sm();
+// @include tpg_texts-md();
+// @include tpg_texts-lg();
+// @include tpg_texts-xl();
+// @include tpg_texts-dev();
+// @include tpg_texts-mob();
+// @include tpg_texts-xso();
+// @include tpg_texts-smo();
+// @include tpg_texts-mdo();
+// @include tpg_texts-lgo();
+
+// .text-... , .label-... , .message-... , .link-...
+
+@mixin tpg_texts-xs(){
+/** tpg_texts xs */
+
+}
+@mixin tpg_texts-sm(){
+/** tpg_texts sm */
+
+}
+@mixin tpg_texts-md(){
+/** tpg_texts md */
+
+}
+@mixin tpg_texts-lg(){
+/** tpg_texts lg */
+
+}
+@mixin tpg_texts-xl(){
+/** tpg_texts xl */
+
+}
+@mixin tpg_texts-dev(){
+    /** tpg_texts dev */
+
+}
+@mixin tpg_texts-mob(){
+/** tpg_texts mob */
+
+}
+@mixin tpg_texts-xso(){
+    /** tpg_texts xso */
+
+}
+@mixin tpg_texts-smo(){
+/** tpg_texts smo */
+
+}
+@mixin tpg_texts-mdo(){
+/** tpg_texts mdo */
+
+}
+@mixin tpg_texts-lgo(){
+/** tpg_texts lgo */
+
+}
+// BLOCK VARIABLES BELOW
+// fn txt
+$e_txt:(
+  c: color(empty),
+
+  bgc: bgc(empty),
+  bgi: bgi(empty),
+
+  w: width(empty),
+  h: height(empty),
+
+  fw: font(w,empty),
+  ff: font(f,empty),
+  fz: font(s,empty),
+  lh: font(lh,empty),
+
+  pl: ind(empty),
+  pr: ind(empty),
+  pt: ind(empty),
+  pb: ind(empty),
+
+  ml: ind(empty),
+  mr: ind(empty),
+  mt: ind(empty),
+  mb: ind(empty)
+);
+@function txtexa($var){
+    @return map_get($e_txt,$var);
+}

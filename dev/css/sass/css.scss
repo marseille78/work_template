@@ -1,0 +1,955 @@
+// IMPORT BLOCK FILES
+//Vendor
+@import
+//Vendor
+"vendor/normalize",
+//base
+'core/base/functions',
+'core/base/vars',
+'core/base/mixins',
+'core/base/placeholders',
+//blocks and layers
+//[ block s, form s, helper s, indentation s, links_and_button s, list s, othe r, table s, structur e, tag s, text s]
+"typography/tpg_texts",
+"typography/tpg_tags"
+;
+// DEFAULT SECTION TITLE
+
+
+
+
+@import "core/base/mixins/blocks-colored";
+
+.test_block {
+  @include blocks-colored;
+}
+
+
+
+
+
+//CONTENT FOR MIXINS
+//INCLUDE MIXINS HERE xs
+@include empty_content(xs);
+@include plb-multiblocks-xs;
+
+/**
+## Typography
+styles for default html tag s and similar classes
+*/
+@include plb-typography-xs;
+@include tpg_tags-xs();
+@include tpg_texts-xs();
+// CATEGORY TYPOGRAPHY START
+
+// CATEGORY TYPOGRAPHY END
+/**
+## helpers
+*/
+@include plb-helpers-xs;
+// CATEGORY HELPERS START
+
+@include helpers-clearfix();
+// CATEGORY HELPERS END
+/**
+## common
+universal classes what can be used every where on site
+*/
+/*
+    structure
+    styles for main page construction
+*/
+@include plb-structure-xs;
+// CATEGORY STRUCTURE START
+@include structure-grid();
+@include structure-grid-flex();
+// CATEGORY STRUCTURE END
+/*
+    buttons
+*/
+@include plb-buttons-xs;
+// CATEGORY BUTTONS START
+
+// CATEGORY BUTTONS END
+/*
+    lists
+*/
+@include plb-lists-xs;
+// CATEGORY LISTS START
+@include lists-defs(xs,1,1,0,1);
+// CATEGORY LISTS END
+/*
+    blocks
+*/
+@include plb-blocks-xs;
+// CATEGORY BLOCKS START
+
+// CATEGORY BLOCKS END
+/*
+    forms
+*/
+@include plb-forms-xs;
+// CATEGORY FORMS START
+
+// CATEGORY FORMS END
+/*
+    tables
+*/
+@include plb-tables-xs;
+// CATEGORY TABLES START
+
+// CATEGORY TABLES END
+/**
+## elements
+styles for different block s and elements on site
+*/
+/*
+    other
+*/
+@include plb-other-xs;
+// CATEGORY OTHER START
+
+// CATEGORY OTHER END
+/**
+## Media queries
+mobile first structure
+**/
+@media only screen and (min-width: 500px) {
+
+  //INCLUDE MIXINS HERE sm
+  @include empty_content(sm);
+  @include plb-multiblocks-sm;
+  /**
+  ## sm Typography
+  styles for default html tag s and similar classes
+  */
+  @include plb-typography-sm;
+  @include tpg_tags-sm();
+  @include tpg_texts-sm();
+  // CATEGORY TYPOGRAPHY START
+
+  // CATEGORY TYPOGRAPHY END
+  /**
+  ## sm helpers
+  */
+  @include plb-helpers-sm;
+  // CATEGORY HELPERS START
+
+  // CATEGORY HELPERS END
+  /**
+  ## sm common
+  universal classes what can be used every where on site
+  */
+  /*
+      sm structure
+      styles for main page construction
+  */
+  @include plb-structure-sm;
+  // CATEGORY STRUCTURE START
+  @include structure-grid(sm);
+  @include structure-grid-flex(sm);
+  // CATEGORY STRUCTURE END
+  /*
+      sm buttons
+  */
+  @include plb-buttons-sm;
+  // CATEGORY BUTTONS START
+
+  // CATEGORY BUTTONS END
+
+  /*
+      sm lists
+  */
+  @include plb-lists-sm;
+  // CATEGORY LISTS START
+
+  // CATEGORY LISTS END
+  /*
+      sm blocks
+  */
+  @include plb-blocks-sm;
+  // CATEGORY BLOCKS START
+
+  // CATEGORY BLOCKS END
+  /*
+      sm forms
+  */
+  @include plb-forms-sm;
+  // CATEGORY FORMS START
+
+  // CATEGORY FORMS END
+
+  /*
+      sm tables
+  */
+  @include plb-tables-sm;
+  // CATEGORY TABLES START
+
+  // CATEGORY TABLES END
+  /**
+  ## sm elements
+  styles for different block s and elements on site
+  */
+  /*
+      sm other
+  */
+  @include plb-other-sm;
+  // CATEGORY OTHER START
+
+  // CATEGORY OTHER END
+}
+@media only screen and (min-width: 768px) {
+  //INCLUDE MIXINS HERE md
+  @include empty_content(md);
+  @include plb-multiblocks-md;
+
+  /**
+  ## md Typography
+  styles for default html tag s and similar classes
+  */
+  @include plb-typography-md;
+  @include tpg_tags-md();
+  @include tpg_texts-md();
+  // CATEGORY TYPOGRAPHY START
+
+  // CATEGORY TYPOGRAPHY END
+  /**
+  ## md helpers
+  */
+  @include plb-helpers-md;
+  // CATEGORY HELPERS START
+
+  // CATEGORY HELPERS END
+  /**
+  ## md common
+  universal classes what can be used every where on site
+  */
+  /*
+      md structure
+      styles for main page construction
+  */
+  @include plb-structure-md;
+  // CATEGORY STRUCTURE START
+  @include structure-grid(md);
+  @include structure-grid-flex(md);
+  // CATEGORY STRUCTURE END
+  /*
+      md buttons
+  */
+  @include plb-buttons-md;
+  // CATEGORY BUTTONS START
+
+  // CATEGORY BUTTONS END
+
+  /*
+      md lists
+  */
+  @include plb-lists-md;
+  // CATEGORY LISTS START
+
+  // CATEGORY LISTS END
+  /*
+      md blocks
+  */
+  @include plb-blocks-md;
+  // CATEGORY BLOCKS START
+  // CATEGORY BLOCKS EN
+  /*
+      md forms
+  */
+  @include plb-forms-md;
+  // CATEGORY FORMS START
+
+  // CATEGORY FORMS END
+
+  /*
+      md tables
+  */
+  @include plb-tables-md;
+  // CATEGORY TABLES START
+
+  // CATEGORY TABLES END
+  /**
+  ## md elements
+  styles for different block s and elements on site
+  */
+  /*
+      md other
+  */
+  @include plb-other-md;
+  // CATEGORY OTHER START
+
+  // CATEGORY OTHER END
+}
+@media only screen and (min-width: 1025px) {
+  //INCLUDE MIXINS HERE lg
+  @include empty_content(lg);
+  @include plb-multiblocks-lg;
+
+  /**
+  ## lg Typography
+  styles for default html tag s and similar classes
+  */
+  @include plb-typography-lg;
+  @include tpg_tags-lg();
+  @include tpg_texts-lg();
+  // CATEGORY TYPOGRAPHY START
+
+  // CATEGORY TYPOGRAPHY END
+  /**
+  ## lg helpers
+  */
+  @include plb-helpers-lg;
+  // CATEGORY HELPERS START
+
+  // CATEGORY HELPERS END
+  /**
+  ## lg common
+  universal classes what can be used every where on site
+  */
+  /*
+      lg structure
+      styles for main page construction
+  */
+  @include plb-structure-lg;
+  // CATEGORY STRUCTURE START
+  @include structure-grid(lg);
+  @include structure-grid-flex(lg);
+  // CATEGORY STRUCTURE END
+  /*
+      lg buttons
+  */
+  @include plb-buttons-lg;
+  // CATEGORY BUTTONS START
+
+  // CATEGORY BUTTONS END
+
+  /*
+      lg lists
+  */
+  @include plb-lists-lg;
+  // CATEGORY LISTS START
+
+  // CATEGORY LISTS END
+  /*
+      lg blocks
+  */
+  @include plb-blocks-lg;
+  // CATEGORY BLOCKS START
+
+  // CATEGORY BLOCKS END
+  /*
+      lg forms
+  */
+  @include plb-forms-lg;
+  // CATEGORY FORMS START
+
+  // CATEGORY FORMS END
+
+  /*
+      lg tables
+  */
+  @include plb-tables-lg;
+  // CATEGORY TABLES START
+
+  // CATEGORY TABLES END
+  /**
+  ## lg elements
+  styles for different block s and elements on site
+  */
+  /*
+      lg other
+  */
+  @include plb-other-lg;
+  // CATEGORY OTHER START
+
+  // CATEGORY OTHER END
+}
+@media only screen and (min-width: 1260px) {
+  //INCLUDE MIXINS HERE xl
+  @include empty_content(xl);
+  @include plb-multiblocks-xl;
+
+  /**
+  ## xl Typography
+  styles for default html tag s and similar classes
+  */
+  @include plb-typography-xl;
+  @include tpg_tags-xl();
+  @include tpg_texts-xl();
+  // CATEGORY TYPOGRAPHY START
+
+  // CATEGORY TYPOGRAPHY END
+  /**
+  ## xl helpers
+  */
+  @include plb-helpers-xl;
+  // CATEGORY HELPERS START
+
+  // CATEGORY HELPERS END
+  /**
+  ## xl common
+  universal classes what can be used every where on site
+  */
+  /*
+      xl structure
+      styles for main page construction
+  */
+  @include plb-structure-xl;
+  // CATEGORY STRUCTURE START
+  @include structure-grid(xl);
+  @include structure-grid-flex(xl);
+  // CATEGORY STRUCTURE END
+  /*
+      xl buttons
+  */
+  @include plb-buttons-xl;
+  // CATEGORY BUTTONS START
+
+  // CATEGORY BUTTONS END
+
+  /*
+      xl lists
+  */
+  @include plb-lists-xl;
+  // CATEGORY LISTS START
+
+  // CATEGORY LISTS END
+  /*
+      xl blocks
+  */
+  @include plb-blocks-xl;
+  // CATEGORY BLOCKS START
+
+  // CATEGORY BLOCKS END
+  /*
+      xl forms
+  */
+  @include plb-forms-xl;
+  // CATEGORY FORMS START
+
+  // CATEGORY FORMS END
+
+  /*
+      xl tables
+  */
+  @include plb-tables-xl;
+  // CATEGORY TABLES START
+
+  // CATEGORY TABLES END
+  /**
+  ## xl elements
+  styles for different block s and elements on site
+  */
+  /*
+      xl other
+  */
+  @include plb-other-xl;
+  // CATEGORY OTHER START
+
+  // CATEGORY OTHER END
+}
+@media only screen and (max-width: 1024px) {
+  //INCLUDE MIXINS HERE dev
+  @include empty_content(dev);
+  @include plb-multiblocks-dev;
+
+  /**
+  ## dev Typography
+  styles for default html tag s and similar classes
+  */
+  @include plb-typography-dev;
+  @include tpg_tags-dev();
+  @include tpg_texts-dev();
+  // CATEGORY TYPOGRAPHY START
+
+  // CATEGORY TYPOGRAPHY END
+  /**
+  ## dev helpers
+  */
+  @include plb-helpers-dev;
+  // CATEGORY HELPERS START
+
+  // CATEGORY HELPERS END
+  /**
+  ## dev common
+  universal classes what can be used every where on site
+  */
+  /*
+      dev structure
+      styles for main page construction
+  */
+  @include plb-structure-dev;
+  // CATEGORY STRUCTURE START
+  @include structure-grid(dev);
+  @include structure-grid-flex(dev);
+  // CATEGORY STRUCTURE END
+  /*
+      dev buttons
+  */
+  @include plb-buttons-dev;
+  // CATEGORY BUTTONS START
+
+  // CATEGORY BUTTONS END
+
+  /*
+      dev lists
+  */
+  @include plb-lists-dev;
+  // CATEGORY LISTS START
+
+  // CATEGORY LISTS END
+  /*
+      dev blocks
+  */
+  @include plb-blocks-dev;
+  // CATEGORY BLOCKS START
+
+  // CATEGORY BLOCKS END
+  /*
+      dev forms
+  */
+  @include plb-forms-dev;
+  // CATEGORY FORMS START
+
+  // CATEGORY FORMS END
+
+  /*
+      dev tables
+  */
+  @include plb-tables-dev;
+  // CATEGORY TABLES START
+
+  // CATEGORY TABLES END
+  /**
+  ## dev elements
+  styles for different block s and elements on site
+  */
+  /*
+      dev other
+  */
+  @include plb-other-dev;
+  // CATEGORY OTHER START
+
+  // CATEGORY OTHER END
+}
+@media only screen and (max-width: 767px) {
+  //INCLUDE MIXINS HERE mob
+  @include empty_content(mob);
+  @include plb-multiblocks-mob;
+
+  /**
+  ## mob Typography
+  styles for default html tag s and similar classes
+  */
+  @include plb-typography-mob;
+  @include tpg_tags-mob();
+  @include tpg_texts-mob();
+  // CATEGORY TYPOGRAPHY START
+
+  // CATEGORY TYPOGRAPHY END
+  /**
+  ## mob helpers
+  */
+  @include plb-helpers-mob;
+  // CATEGORY HELPERS START
+
+  // CATEGORY HELPERS END
+  /**
+  ## mob common
+  universal classes what can be used every where on site
+  */
+  /*
+      mob structure
+      styles for main page construction
+  */
+  @include plb-structure-mob;
+  // CATEGORY STRUCTURE START
+  @include structure-grid(mob);
+  @include structure-grid-flex(mob);
+  // CATEGORY STRUCTURE END
+  /*
+      mob buttons
+  */
+  @include plb-buttons-mob;
+  // CATEGORY BUTTONS START
+
+  // CATEGORY BUTTONS END
+
+  /*
+      mob lists
+  */
+  @include plb-lists-mob;
+  // CATEGORY LISTS START
+
+  // CATEGORY LISTS END
+  /*
+      mob blocks
+  */
+  @include plb-blocks-mob;
+  // CATEGORY BLOCKS START
+
+  // CATEGORY BLOCKS END
+  /*
+      mob forms
+  */
+  @include plb-forms-mob;
+  // CATEGORY FORMS START
+
+  // CATEGORY FORMS END
+
+  /*
+      mob tables
+  */
+  @include plb-tables-mob;
+  // CATEGORY TABLES START
+
+  // CATEGORY TABLES END
+  /**
+  ## mob elements
+  styles for different block s and elements on site
+  */
+  /*
+      mob other
+  */
+  @include plb-other-mob;
+  // CATEGORY OTHER START
+
+  // CATEGORY OTHER END
+}
+@media only screen and (max-width: 499px) {
+  //INCLUDE MIXINS HERE xso
+  @include empty_content(xso);
+  @include plb-multiblocks-xso;
+
+  /**
+  ## xso Typography
+  styles for default html tag s and similar classes
+  */
+  @include plb-typography-xso;
+  @include tpg_tags-xso();
+  @include tpg_texts-xso();
+  // CATEGORY TYPOGRAPHY START
+
+  // CATEGORY TYPOGRAPHY END
+  /**
+  ## xso helpers
+  */
+  @include plb-helpers-xso;
+  // CATEGORY HELPERS START
+
+  // CATEGORY HELPERS END
+  /**
+  ## xso common
+  universal classes what can be used every where on site
+  */
+  /*
+      xso structure
+      styles for main page construction
+  */
+  @include plb-structure-xso;
+  // CATEGORY STRUCTURE START
+  @include structure-grid(xso);
+  @include structure-grid-flex(xso);
+  // CATEGORY STRUCTURE END
+  /*
+      xso buttons
+  */
+  @include plb-buttons-xso;
+  // CATEGORY BUTTONS START
+
+  // CATEGORY BUTTONS END
+
+  /*
+      xso lists
+  */
+  @include plb-lists-xso;
+  // CATEGORY LISTS START
+
+  // CATEGORY LISTS END
+  /*
+      xso blocks
+  */
+  @include plb-blocks-xso;
+  // CATEGORY BLOCKS START
+
+  // CATEGORY BLOCKS END
+  /*
+      xso forms
+  */
+  @include plb-forms-xso;
+  // CATEGORY FORMS START
+
+  // CATEGORY FORMS END
+
+  /*
+      xso tables
+  */
+  @include plb-tables-xso;
+  // CATEGORY TABLES START
+
+  // CATEGORY TABLES END
+  /**
+  ## xso elements
+  styles for different block s and elements on site
+  */
+  /*
+      xso other
+  */
+  @include plb-other-xso;
+  // CATEGORY OTHER START
+
+  // CATEGORY OTHER END
+}
+@media only screen and (min-width: 500px) and (max-width: 767px) {
+  //INCLUDE MIXINS HERE smo
+  @include empty_content(smo);
+  @include plb-multiblocks-smo;
+
+  /**
+  ## smo Typography
+  styles for default html tag s and similar classes
+  */
+  @include plb-typography-smo;
+  @include tpg_tags-smo();
+  @include tpg_texts-smo();
+  // CATEGORY TYPOGRAPHY START
+
+  // CATEGORY TYPOGRAPHY END
+  /**
+  ## smo helpers
+  */
+  @include plb-helpers-smo;
+  // CATEGORY HELPERS START
+
+  // CATEGORY HELPERS END
+  /**
+  ## smo common
+  universal classes what can be used every where on site
+  */
+  /*
+      smo structure
+      styles for main page construction
+  */
+  @include plb-structure-smo;
+  // CATEGORY STRUCTURE START
+  @include structure-grid(smo);
+  @include structure-grid-flex(smo);
+  // CATEGORY STRUCTURE END
+  /*
+      smo buttons
+  */
+  @include plb-buttons-smo;
+  // CATEGORY BUTTONS START
+
+  // CATEGORY BUTTONS END
+
+  /*
+      smo lists
+  */
+  @include plb-lists-smo;
+  // CATEGORY LISTS START
+
+  // CATEGORY LISTS END
+  /*
+      smo blocks
+  */
+  @include plb-blocks-smo;
+  // CATEGORY BLOCKS START
+
+  // CATEGORY BLOCKS END
+  /*
+      smo forms
+  */
+  @include plb-forms-smo;
+  // CATEGORY FORMS START
+
+  // CATEGORY FORMS END
+
+  /*
+      smo tables
+  */
+  @include plb-tables-smo;
+  // CATEGORY TABLES START
+
+  // CATEGORY TABLES END
+  /**
+  ## smo elements
+  styles for different block s and elements on site
+  */
+  /*
+      smo other
+  */
+  @include plb-other-smo;
+  // CATEGORY OTHER START
+
+  // CATEGORY OTHER END
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  //INCLUDE MIXINS HERE mdo
+  @include empty_content(mdo);
+  @include plb-multiblocks-mdo;
+
+  /**
+  ## mdo Typography
+  styles for default html tag s and similar classes
+  */
+  @include plb-typography-mdo;
+  @include tpg_tags-mdo();
+  @include tpg_texts-mdo();
+  // CATEGORY TYPOGRAPHY START
+
+  // CATEGORY TYPOGRAPHY END
+  /**
+  ## mdo helpers
+  */
+  @include plb-helpers-mdo;
+  // CATEGORY HELPERS START
+
+  // CATEGORY HELPERS END
+  /**
+  ## mdo common
+  universal classes what can be used every where on site
+  */
+  /*
+      mdo structure
+      styles for main page construction
+  */
+  @include plb-structure-mdo;
+  // CATEGORY STRUCTURE START
+  @include structure-grid(mdo);
+  @include structure-grid-flex(mdo);
+  // CATEGORY STRUCTURE END
+  /*
+      mdo buttons
+  */
+  @include plb-buttons-mdo;
+  // CATEGORY BUTTONS START
+
+  // CATEGORY BUTTONS END
+
+  /*
+      mdo lists
+  */
+  @include plb-lists-mdo;
+  // CATEGORY LISTS START
+
+  // CATEGORY LISTS END
+  /*
+      mdo blocks
+  */
+  @include plb-blocks-mdo;
+  // CATEGORY BLOCKS START
+
+  // CATEGORY BLOCKS END
+  /*
+      mdo forms
+  */
+  @include plb-forms-mdo;
+  // CATEGORY FORMS START
+
+  // CATEGORY FORMS END
+
+  /*
+      mdo tables
+  */
+  @include plb-tables-mdo;
+  // CATEGORY TABLES START
+
+  // CATEGORY TABLES END
+  /**
+  ## mdo elements
+  styles for different block s and elements on site
+  */
+  /*
+      mdo other
+  */
+  @include plb-other-mdo;
+  // CATEGORY OTHER START
+
+  // CATEGORY OTHER END
+}
+@media only screen and (min-width: 1025px) and (max-width: 1259px) {
+  //INCLUDE MIXINS HERE lgo
+  @include empty_content(lgo);
+  @include plb-multiblocks-lgo;
+
+  /**
+  ## lgo Typography
+  styles for default html tag s and similar classes
+  */
+  @include plb-typography-lgo;
+  @include tpg_tags-lgo();
+  @include tpg_texts-lgo();
+  // CATEGORY TYPOGRAPHY START
+
+  // CATEGORY TYPOGRAPHY END
+  /**
+  ## lgo helpers
+  */
+  @include plb-helpers-lgo;
+  // CATEGORY HELPERS START
+
+  // CATEGORY HELPERS END
+  /**
+  ## lgo common
+  universal classes what can be used every where on site
+  */
+  /*
+      lgo structure
+      styles for main page construction
+  */
+  @include plb-structure-lgo;
+  // CATEGORY STRUCTURE START
+  @include structure-grid(lgo);
+  @include structure-grid-flex(lgo);
+  // CATEGORY STRUCTURE END
+  /*
+      lgo buttons
+  */
+  @include plb-buttons-lgo;
+  // CATEGORY BUTTONS START
+
+  // CATEGORY BUTTONS END
+
+  /*
+      lgo lists
+  */
+  @include plb-lists-lgo;
+  // CATEGORY LISTS START
+
+  // CATEGORY LISTS END
+  /*
+      lgo blocks
+  */
+  @include plb-blocks-lgo;
+  // CATEGORY BLOCKS START
+
+  // CATEGORY BLOCKS END
+  /*
+      lgo forms
+  */
+  @include plb-forms-lgo;
+  // CATEGORY FORMS START
+
+  // CATEGORY FORMS END
+
+  /*
+      lgo tables
+  */
+  @include plb-tables-lgo;
+  // CATEGORY TABLES START
+
+  // CATEGORY TABLES END
+  /**
+  ## lgo elements
+  styles for different block s and elements on site
+  */
+  /*
+      lgo other
+  */
+  @include plb-other-lgo;
+  // CATEGORY OTHER START
+
+  // CATEGORY OTHER END
+}

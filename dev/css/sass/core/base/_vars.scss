@@ -1,0 +1,16 @@
+// Global Base variables
+// name started with '__' (double _) and use camelCamp name style
+
+$__useBXZForAll : 0; // switch off 'box-sizing: border-box;' in mixins
+// Colors
+$__textColor : #000;
+$__bgColor : #fff;
+$__borderColor : $__textColor;
+//Icons
+$__icon_font_name : '';
+$__sprite_url : "../img/sprite.png";
+
+
+
+// Global Project variables
+@import "../project_vars";

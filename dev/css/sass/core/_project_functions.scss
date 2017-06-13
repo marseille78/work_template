@@ -1,0 +1,63 @@
+// Global Project functions
+
+//# MAPS
+
+@function color($var){
+  @if $var == empty{
+    @return "";
+  }
+  @return map_get($g_Color,$var);
+}
+@function width($var){
+  @if $var == empty{
+    @return "";
+  }
+  @return map_get($g_Width,$var);
+}
+@function height($var){
+  @if $var == empty{
+    @return "";
+  }
+  @return map_get($g_Height,$var);
+}
+@function size($var){
+  @if $var == empty{
+    @return "";
+  }
+  @return map_get($g_Size,$var);
+}
+@function ind($var){
+  @if $var == empty{
+    @return "";
+  }
+  @return map_get($g_Indentations,$var);
+}
+@function bgc($var){
+  @if $var == empty{
+    @return "";
+  }
+  @return map_get($g_BackgroundColors,$var);
+}
+@function bgi($var){
+  @if $var == empty{
+    @return "";
+  }
+  @return map_get($g_BackgroundImages,$var);
+}
+@function font($fn,$var){
+  @if $var == empty{
+    @return "";
+  }
+  @if $fn == w{
+    @return map_get($g_FontWeight,$var);
+  }
+  @if $fn == s{
+    @return map_get($g_FontSize,$var);
+  }
+  @if $fn == lh{
+    @return map_get($g_LineHeight,$var);
+  }
+  @if $fn == f{
+    @return map_get($g_FontFamely,$var);
+  }
+}

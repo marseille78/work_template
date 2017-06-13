@@ -1,0 +1,85 @@
+// @include nav-example-xs();
+// @include nav-example-sm();
+// @include nav-example-md();
+// @include nav-example-lg();
+// @include nav-example-xl();
+// @include nav-example-dev();
+// @include nav-example-mob();
+// @include nav-example-xso();
+// @include nav-example-smo();
+// @include nav-example-mdo();
+// @include nav-example-lgo();
+
+@mixin nav-example-xs(){
+/** nav-example xs */
+    .nav-example{}
+}
+@mixin nav-example-sm(){
+/** nav-example sm */
+    .nav-example{}
+}
+@mixin nav-example-md(){
+/** nav-example md */
+    .nav-example{}
+}
+@mixin nav-example-lg(){
+/** nav-example lg */
+    .nav-example{}
+}
+@mixin nav-example-xl(){
+/** nav-example xl */
+    .nav-example{}
+}
+@mixin nav-example-dev(){
+    /** nav-example dev */
+    .nav-example{}
+}
+@mixin nav-example-mob(){
+/** nav-example mob */
+    .nav-example{}
+}
+@mixin nav-example-xso(){
+    /** nav-example xso */
+    .nav-example{}
+}
+@mixin nav-example-smo(){
+/** nav-example smo */
+    .nav-example{}
+}
+@mixin nav-example-mdo(){
+/** nav-example mdo */
+    .nav-example{}
+}
+@mixin nav-example-lgo(){
+/** nav-example lgo */
+    .nav-example{}
+}
+// BLOCK VARIABLES BELOW
+// fn navexa
+$e_navExa:(
+  c: color(empty),
+
+  bgc: bgc(empty),
+  bgi: bgi(empty),
+
+  w: width(empty),
+  h: height(empty),
+
+  fw: font(w,empty),
+  ff: font(f,empty),
+  fz: font(s,empty),
+  lh: font(lh,empty),
+
+  pl: ind(empty),
+  pr: ind(empty),
+  pt: ind(empty),
+  pb: ind(empty),
+
+  ml: ind(empty),
+  mr: ind(empty),
+  mt: ind(empty),
+  mb: ind(empty)
+);
+@function navexa($var){
+    @return map_get($e_navExa,$var);
+}

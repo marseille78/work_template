@@ -1,0 +1,16 @@
+// @param string $media - media section name [xs,sm,md,...]. mainly used for @extend placeholders
+// @param string $name - block name. Use '_' with $cc for empty default styles
+// @param color $color - bgc
+// @param css $pd - padding by default [0 1px 10px 3px]
+// @param string $viewport - media section in class name
+// @param string $cc - placeholder name for extend by custom code. will create double selector at @include placeholder placement
+@mixin blocks-colored($media:xs,$name:'',$color:$__textColor,$pd:0,$viewport:'',$cc:''){//TODO: global var to $pd
+  .block-colored#{add-dash($name)}#{add-dash($viewport)}{
+    @if $cc != ''{
+      @extend %#{$cc}#{add-dash($media)};
+    }
+
+    background-color: $color;
+    padding: $pd;
+  }
+}

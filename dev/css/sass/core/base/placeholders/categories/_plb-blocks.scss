@@ -1,0 +1,80 @@
+// Placeholders blocks
+
+// @include plb-blocks-xs;
+// @include plb-blocks-sm;
+// @include plb-blocks-md;
+// @include plb-blocks-lg;
+// @include plb-blocks-xl;
+// @include plb-blocks-xso;
+// @include plb-blocks-mob;
+// @include plb-blocks-dev;
+// @include plb-blocks-smo;
+// @include plb-blocks-mdo;
+// @include plb-blocks-lgo;
+
+@mixin plb-blocks-xs{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-blocks-xs;
+}
+@mixin plb-blocks-sm{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-blocks-sm;
+}
+@mixin plb-blocks-md{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-blocks-md;
+}
+@mixin plb-blocks-lg{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-blocks-lg;
+}
+@mixin plb-blocks-xl{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-blocks-xl;
+}
+@mixin plb-blocks-xso{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-blocks-xso;
+}
+@mixin plb-blocks-mob{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-blocks-mob;
+}
+@mixin plb-blocks-dev{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-blocks-dev;
+}
+@mixin plb-blocks-smo{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-blocks-smo;
+}
+@mixin plb-blocks-mdo{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-blocks-mdo;
+}
+@mixin plb-blocks-lgo{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-blocks-lgo;
+}

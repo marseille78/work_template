@@ -1,0 +1,41 @@
+// Global Base functions
+
+//# SPECIAL
+
+// Add '-' before send string
+// @param string $part
+// @return string | ''
+@function add-dash($part) {
+  @if $part != ''{
+    $part: -#{$part}
+  }
+  @return $part;
+}
+
+// Add important
+// @param bool $add
+// @return string | ''
+@function add-important($add){
+  $return:'';
+  @if $add == 1{
+    $return:''!important;
+  }
+  @return $return;
+}
+
+
+// Check empty or 0 for var and set by default
+// @param string|bool $var - for if condition
+// @param * $def - value by default
+// @return $def
+@function empty($var,$def:'') {
+  @if $var != '' {
+    $def: $var;
+  } @else if $var == 0 {
+    $def: '';
+  }
+  @return $def;
+}
+
+// Global Project functions
+@import "../project_functions";

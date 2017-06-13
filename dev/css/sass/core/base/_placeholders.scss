@@ -1,0 +1,102 @@
+// paragraphs
+@import
+"placeholders/categories/plb-blocks",
+"placeholders/categories/plb-forms",
+"placeholders/categories/plb-helpers",
+"placeholders/categories/plb-buttons",
+"placeholders/categories/plb-lists",
+"placeholders/categories/plb-other",
+"placeholders/categories/plb-structure",
+"placeholders/categories/plb-tables",
+"placeholders/categories/plb-typography"
+;
+
+// defaults
+@import "placeholders/elements/plb-lists_defs"
+;
+
+// projects
+@import "../project_placeholders";
+// For using in mixins need to use @include placeholder
+// One mixin for one placeholder or will be doubles
+
+// Placeholders multiblocks
+
+// @include plb-multiblocks-xs;
+// @include plb-multiblocks-sm;
+// @include plb-multiblocks-md;
+// @include plb-multiblocks-lg;
+// @include plb-multiblocks-xl;
+// @include plb-multiblocks-dev;
+// @include plb-multiblocks-mob;
+// @include plb-multiblocks-xso;
+// @include plb-multiblocks-smo;
+// @include plb-multiblocks-mdo;
+// @include plb-multiblocks-lgo;
+
+@mixin plb-multiblocks-xs{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-multiblocks-xs;
+}
+@mixin plb-multiblocks-sm{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-multiblocks-sm;
+}
+@mixin plb-multiblocks-md{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-multiblocks-md;
+}
+@mixin plb-multiblocks-lg{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-multiblocks-lg;
+}
+@mixin plb-multiblocks-xl{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-multiblocks-xl;
+}
+@mixin plb-multiblocks-dev{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-multiblocks-dev;
+}
+@mixin plb-multiblocks-mob{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-multiblocks-mob;
+}
+@mixin plb-multiblocks-xso{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-multiblocks-xso;
+}
+@mixin plb-multiblocks-smo{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-multiblocks-smo;
+}
+@mixin plb-multiblocks-mdo{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-multiblocks-mdo;
+}
+@mixin plb-multiblocks-lgo{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-multiblocks-lgo;
+}

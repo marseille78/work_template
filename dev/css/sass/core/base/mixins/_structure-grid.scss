@@ -1,0 +1,25 @@
+// @param string $viewport - media section in class name
+// @param number $size - grid size
+// @param bool $sided - use sided-right option
+@mixin structure-grid($viewport:'',$size:12,$sided:0){
+  $viewport: add-dash($viewport);
+  /** .col#{$viewport} */
+  .col#{$viewport} {
+    float: left;
+    @if $__useBXZForAll == 0 {
+      box-sizing: border-box;
+    }
+  }
+
+  @if $sided == 1{
+    .col#{$viewport}.sided-right {
+      float: right;
+    }
+  }
+
+  @for $i from 1 through $size {
+    .col#{$viewport}-#{$i} {
+      width: 100% / $size * $i;
+    }
+  }
+}

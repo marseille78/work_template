@@ -1,0 +1,85 @@
+// @include hlp_example-xs();
+// @include hlp_example-sm();
+// @include hlp_example-md();
+// @include hlp_example-lg();
+// @include hlp_example-xl();
+// @include hlp_example-dev();
+// @include hlp_example-mob();
+// @include hlp_example-xso();
+// @include hlp_example-smo();
+// @include hlp_example-mdo();
+// @include hlp_example-lgo();
+
+@mixin hlp_example-xs(){
+/** hlp_example xs */
+    .example{}
+}
+@mixin hlp_example-sm(){
+/** hlp_example sm */
+    .example{}
+}
+@mixin hlp_example-md(){
+/** hlp_example md */
+    .example{}
+}
+@mixin hlp_example-lg(){
+/** hlp_example lg */
+    .example{}
+}
+@mixin hlp_example-xl(){
+/** hlp_example xl */
+    .example{}
+}
+@mixin hlp_example-dev(){
+    /** hlp_example dev */
+    .example{}
+}
+@mixin hlp_example-mob(){
+/** hlp_example mob */
+    .example{}
+}
+@mixin hlp_example-xso(){
+    /** hlp_example xso */
+    .example{}
+}
+@mixin hlp_example-smo(){
+/** hlp_example smo */
+    .example{}
+}
+@mixin hlp_example-mdo(){
+/** hlp_example mdo */
+    .example{}
+}
+@mixin hlp_example-lgo(){
+/** hlp_example lgo */
+    .example{}
+}
+// BLOCK VARIABLES BELOW
+// fn hlpexa
+$e_hlpExa:(
+  c: color(empty),
+
+  bgc: bgc(empty),
+  bgi: bgi(empty),
+
+  w: width(empty),
+  h: height(empty),
+
+  fw: font(w,empty),
+  ff: font(f,empty),
+  fz: font(s,empty),
+  lh: font(lh,empty),
+
+  pl: ind(empty),
+  pr: ind(empty),
+  pt: ind(empty),
+  pb: ind(empty),
+
+  ml: ind(empty),
+  mr: ind(empty),
+  mt: ind(empty),
+  mb: ind(empty)
+);
+@function hlpexa($var){
+    @return map_get($e_hlpExa,$var);
+}

@@ -1,0 +1,24 @@
+@mixin icon($type,$suffix:''){
+  /* #{$type} */
+  .icon#{add-dash($suffix)}{
+    display: inline-block;
+
+    @if $type != img{
+      &:before{
+        content: '';
+        display: block;
+        @if $type == sprite{
+          background-image: url($__sprite_url);
+        }
+        @if $type == font{
+          font-family: $__icon_font_name;
+        }
+      }
+    } @else {
+      img{
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+// @include btns-xs();
+// @include btns-sm();
+// @include btns-md();
+// @include btns-lg();
+// @include btns-xl();
+// @include btns-dev();
+// @include btns-mob();
+// @include btns-xso();
+// @include btns-smo();
+// @include btns-mdo();
+// @include btns-lgo();
+
+@mixin btns-xs(){
+/** btn xs */
+    .btn{}
+}
+@mixin btns-sm(){
+/** btn sm */
+    .btn{}
+}
+@mixin btns-md(){
+/** btn md */
+    .btn{}
+}
+@mixin btns-lg(){
+/** btn lg */
+    .btn{}
+}
+@mixin btns-xl(){
+/** btn xl */
+    .btn{}
+}
+@mixin btns-dev(){
+    /** btn dev */
+    .btn{}
+}
+@mixin btns-mob(){
+/** btn mob */
+    .btn{}
+}
+@mixin btns-xso(){
+    /** btn xso */
+    .btn{}
+}
+@mixin btns-smo(){
+/** btn smo */
+    .btn{}
+}
+@mixin btns-mdo(){
+/** btn mdo */
+    .btn{}
+}
+@mixin btns-lgo(){
+/** btn lgo */
+    .btn{}
+}
+// BLOCK VARIABLES BELOW
+// fn btnexa
+$e_btnExa:(
+  c: color(empty),
+
+  bgc: bgc(empty),
+  bgi: bgi(empty),
+
+  w: width(empty),
+  h: height(empty),
+
+  fw: font(w,empty),
+  ff: font(f,empty),
+  fz: font(s,empty),
+  lh: font(lh,empty),
+
+  pl: ind(empty),
+  pr: ind(empty),
+  pt: ind(empty),
+  pb: ind(empty),
+
+  ml: ind(empty),
+  mr: ind(empty),
+  mt: ind(empty),
+  mb: ind(empty)
+);
+@function btnexa($var){
+    @return map_get($e_btnExa,$var);
+}

@@ -1,0 +1,85 @@
+// @include tpg_tags-xs();
+// @include tpg_tags-sm();
+// @include tpg_tags-md();
+// @include tpg_tags-lg();
+// @include tpg_tags-xl();
+// @include tpg_tags-dev();
+// @include tpg_tags-mob();
+// @include tpg_tags-xso();
+// @include tpg_tags-smo();
+// @include tpg_tags-mdo();
+// @include tpg_tags-lgo();
+
+@mixin tpg_tags-xs(){
+/** tpg_tags xs */
+
+}
+@mixin tpg_tags-sm(){
+/** tpg_tags sm */
+
+}
+@mixin tpg_tags-md(){
+/** tpg_tags md */
+
+}
+@mixin tpg_tags-lg(){
+/** tpg_tags lg */
+
+}
+@mixin tpg_tags-xl(){
+/** tpg_tags xl */
+
+}
+@mixin tpg_tags-dev(){
+    /** tpg_tags-dev */
+
+}
+@mixin tpg_tags-mob(){
+/** tpg_tags-mob */
+
+}
+@mixin tpg_tags-xso(){
+    /** tpg_tags-xso */
+
+}
+@mixin tpg_tags-smo(){
+/** tpg_tags-smo */
+
+}
+@mixin tpg_tags-mdo(){
+/** tpg_tags-mdo */
+
+}
+@mixin tpg_tags-lgo(){
+/** tpg_tags-lgo */
+
+}
+// BLOCK VARIABLES BELOW
+// fn tags
+$e_tags:(
+  c: color(empty),
+
+  bgc: bgc(empty),
+  bgi: bgi(empty),
+
+  w: width(empty),
+  h: height(empty),
+
+  fw: font(w,empty),
+  ff: font(f,empty),
+  fz: font(s,empty),
+  lh: font(lh,empty),
+
+  pl: ind(empty),
+  pr: ind(empty),
+  pt: ind(empty),
+  pb: ind(empty),
+
+  ml: ind(empty),
+  mr: ind(empty),
+  mt: ind(empty),
+  mb: ind(empty)
+);
+@function tags($var){
+    @return map_get($e_tags,$var);
+}

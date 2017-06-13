@@ -1,0 +1,85 @@
+// @include form-example-xs();
+// @include form-example-sm();
+// @include form-example-md();
+// @include form-example-lg();
+// @include form-example-xl();
+// @include form-example-dev();
+// @include form-example-mob();
+// @include form-example-xso();
+// @include form-example-smo();
+// @include form-example-mdo();
+// @include form-example-lgo();
+
+@mixin form-example-xs(){
+/** form-example xs */
+    .form-example{}
+}
+@mixin form-example-sm(){
+/** form-example sm */
+    .form-example{}
+}
+@mixin form-example-md(){
+/** form-example md */
+    .form-example{}
+}
+@mixin form-example-lg(){
+/** form-example lg */
+    .form-example{}
+}
+@mixin form-example-xl(){
+/** form-example xl */
+    .form-example{}
+}
+@mixin form-example-dev(){
+    /** form-example dev */
+    .form-example{}
+}
+@mixin form-example-mob(){
+/** form-example mob */
+    .form-example{}
+}
+@mixin form-example-xso(){
+    /** form-example xso */
+    .form-example{}
+}
+@mixin form-example-smo(){
+/** form-example smo */
+    .form-example{}
+}
+@mixin form-example-mdo(){
+/** form-example mdo */
+    .form-example{}
+}
+@mixin form-example-lgo(){
+/** form-example lgo */
+    .form-example{}
+}
+// BLOCK VARIABLES BELOW
+// fn formexa
+$e_formExa:(
+  c: color(empty),
+
+  bgc: bgc(empty),
+  bgi: bgi(empty),
+
+  w: width(empty),
+  h: height(empty),
+
+  fw: font(w,empty),
+  ff: font(f,empty),
+  fz: font(s,empty),
+  lh: font(lh,empty),
+
+  pl: ind(empty),
+  pr: ind(empty),
+  pt: ind(empty),
+  pb: ind(empty),
+
+  ml: ind(empty),
+  mr: ind(empty),
+  mt: ind(empty),
+  mb: ind(empty)
+);
+@function formexa($var){
+    @return map_get($e_formExa,$var);
+}

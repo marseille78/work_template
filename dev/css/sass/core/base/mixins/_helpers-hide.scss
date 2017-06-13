@@ -1,0 +1,7 @@
+// @param string $viewport - media section in class name
+// @param bool $important - add important to display
+@mixin helpers-hide($viewport:'', $important:0){
+  .hide#{add-dash($viewport)}{
+    display: none#{add-important($important)};
+  }
+}

@@ -1,0 +1,80 @@
+// Placeholders helpers
+
+// @include plb-helpers-xs;
+// @include plb-helpers-sm;
+// @include plb-helpers-md;
+// @include plb-helpers-lg;
+// @include plb-helpers-xl;
+// @include plb-helpers-xso;
+// @include plb-helpers-mob;
+// @include plb-helpers-dev;
+// @include plb-helpers-smo;
+// @include plb-helpers-mdo;
+// @include plb-helpers-lgo;
+
+@mixin plb-helpers-xs{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-helpers-xs;
+}
+@mixin plb-helpers-sm{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-helpers-sm;
+}
+@mixin plb-helpers-md{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-helpers-md;
+}
+@mixin plb-helpers-lg{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-helpers-lg;
+}
+@mixin plb-helpers-xl{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-helpers-xl;
+}
+@mixin plb-helpers-xso{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-helpers-xso;
+}
+@mixin plb-helpers-mob{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-helpers-mob;
+}
+@mixin plb-helpers-dev{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-helpers-dev;
+}
+@mixin plb-helpers-smo{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-helpers-smo;
+}
+@mixin plb-helpers-mdo{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-helpers-mdo;
+}
+@mixin plb-helpers-lgo{
+  // START MIXIN
+
+  // END MIXIN
+  @include pl-helpers-lgo;
+}

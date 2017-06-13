@@ -1,0 +1,8 @@
+// @param string $name - block name
+// @param color $color - text color
+// @param string $viewport - media section in class name
+@mixin texts-colored($name:'',$color:$__textColor,$viewport:''){
+  .text#{add-dash($name)}#{add-dash($viewport)}{
+    color: $color;
+  }
+}

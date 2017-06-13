@@ -1,0 +1,72 @@
+// @include pl-example-name-xs;
+// @include pl-example-name-sm;
+// @include pl-example-name-md;
+// @include pl-example-name-lg;
+// @include pl-example-name-xl;
+// @include pl-example-name-xso;
+// @include pl-example-name-mob;
+// @include pl-example-name-dev;
+// @include pl-example-name-smo;
+// @include pl-example-name-mdo;
+// @include pl-example-name-lgo;
+
+@mixin pl-example-name{
+  //some css was here
+}
+
+//---------------------------//
+@mixin pl-example-name-xs{
+  %pl-example-name-xs{
+    @include pl-example-name;
+  }
+}
+@mixin pl-example-name-sm{
+  %pl-example-name-sm{
+    @include pl-example-name;
+  }
+}
+@mixin pl-example-name-md{
+  %pl-example-name-md{
+    @include pl-example-name;
+  }
+}
+@mixin pl-example-name-lg{
+  %pl-example-name-lg{
+    @include pl-example-name;
+  }
+}
+@mixin pl-example-name-xl{
+  %pl-example-name-xl{
+    @include pl-example-name;
+  }
+}
+@mixin pl-example-name-xso{
+  %pl-example-name-xso{
+    @include pl-example-name;
+  }
+}
+@mixin pl-example-name-mob{
+  %pl-example-name-mob{
+    @include pl-example-name;
+  }
+}
+@mixin pl-example-name-dev{
+  %pl-example-name-dev{
+    @include pl-example-name;
+  }
+}
+@mixin pl-example-name-smo{
+  %pl-example-name-smo{
+    @include pl-example-name;
+  }
+}
+@mixin pl-example-name-mdo{
+  %pl-example-name-mdo{
+    @include pl-example-name;
+  }
+}
+@mixin pl-example-name-lgo{
+  %pl-example-name-lgo{
+    @include pl-example-name;
+  }
+}

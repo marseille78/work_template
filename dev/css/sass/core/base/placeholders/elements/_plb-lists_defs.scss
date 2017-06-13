@@ -1,0 +1,74 @@
+// @include plb-lists-defs-xs;
+// @include plb-lists-defs-sm;
+// @include plb-lists-defs-md;
+// @include plb-lists-defs-lg;
+// @include plb-lists-defs-xl;
+// @include plb-lists-defs-xso;
+// @include plb-lists-defs-mob;
+// @include plb-lists-defs-dev;
+// @include plb-lists-defs-smo;
+// @include plb-lists-defs-mdo;
+// @include plb-lists-defs-lgo;
+
+@mixin plb-lists-defs{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+//---------------------------//
+@mixin plb-lists-defs-xs{
+  %plb-lists-defs-xs{
+    @include plb-lists-defs;
+  }
+}
+@mixin plb-lists-defs-sm{
+  %plb-lists-defs-sm{
+    @include plb-lists-defs;
+  }
+}
+@mixin plb-lists-defs-md{
+  %plb-lists-defs-md{
+    @include plb-lists-defs;
+  }
+}
+@mixin plb-lists-defs-lg{
+  %plb-lists-defs-lg{
+    @include plb-lists-defs;
+  }
+}
+@mixin plb-lists-defs-xl{
+  %plb-lists-defs-xl{
+    @include plb-lists-defs;
+  }
+}
+@mixin plb-lists-defs-xso{
+  %plb-lists-defs-xso{
+    @include plb-lists-defs;
+  }
+}
+@mixin plb-lists-defs-mob{
+  %plb-lists-defs-mob{
+    @include plb-lists-defs;
+  }
+}
+@mixin plb-lists-defs-dev{
+  %plb-lists-defs-dev{
+    @include plb-lists-defs;
+  }
+}
+@mixin plb-lists-defs-smo{
+  %plb-lists-defs-smo{
+    @include plb-lists-defs;
+  }
+}
+@mixin plb-lists-defs-mdo{
+  %plb-lists-defs-mdo{
+    @include plb-lists-defs;
+  }
+}
+@mixin plb-lists-defs-lgo{
+  %plb-lists-defs-lgo{
+    @include plb-lists-defs;
+  }
+}

@@ -1,0 +1,16 @@
+@import "mixins/blocks-colored",
+"mixins/empty_content",
+"mixins/helpers-centered",
+"mixins/helpers-clearfix",
+"mixins/helpers-float",
+"mixins/helpers-hide",
+"mixins/icon",
+"mixins/img",
+"mixins/lists-defs",
+"mixins/structure-grid",
+"mixins/structure-grid-flex",
+"mixins/texts-colored"
+;
+
+// Project mixins
+@import "../project_mixins";

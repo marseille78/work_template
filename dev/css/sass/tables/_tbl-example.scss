@@ -1,0 +1,85 @@
+// @include tbl-example-xs();
+// @include tbl-example-sm();
+// @include tbl-example-md();
+// @include tbl-example-lg();
+// @include tbl-example-xl();
+// @include tbl-example-dev();
+// @include tbl-example-mob();
+// @include tbl-example-xso();
+// @include tbl-example-smo();
+// @include tbl-example-mdo();
+// @include tbl-example-lgo();
+
+@mixin tbl-example-xs(){
+/** tbl-example xs */
+    .tbl-example{}
+}
+@mixin tbl-example-sm(){
+/** tbl-example sm */
+    .tbl-example{}
+}
+@mixin tbl-example-md(){
+/** tbl-example md */
+    .tbl-example{}
+}
+@mixin tbl-example-lg(){
+/** tbl-example lg */
+    .tbl-example{}
+}
+@mixin tbl-example-xl(){
+/** tbl-example xl */
+    .tbl-example{}
+}
+@mixin tbl-example-dev(){
+    /** tbl-example dev */
+    .tbl-example{}
+}
+@mixin tbl-example-mob(){
+/** tbl-example mob */
+    .tbl-example{}
+}
+@mixin tbl-example-xso(){
+    /** tbl-example xso */
+    .tbl-example{}
+}
+@mixin tbl-example-smo(){
+/** tbl-example smo */
+    .tbl-example{}
+}
+@mixin tbl-example-mdo(){
+/** tbl-example mdo */
+    .tbl-example{}
+}
+@mixin tbl-example-lgo(){
+/** tbl-example lgo */
+    .tbl-example{}
+}
+// BLOCK VARIABLES BELOW
+// fn tblexa
+$e_tblExa:(
+  c: color(empty),
+
+  bgc: bgc(empty),
+  bgi: bgi(empty),
+
+  w: width(empty),
+  h: height(empty),
+
+  fw: font(w,empty),
+  ff: font(f,empty),
+  fz: font(s,empty),
+  lh: font(lh,empty),
+
+  pl: ind(empty),
+  pr: ind(empty),
+  pt: ind(empty),
+  pb: ind(empty),
+
+  ml: ind(empty),
+  mr: ind(empty),
+  mt: ind(empty),
+  mb: ind(empty)
+);
+@function tblexa($var){
+    @return map_get($e_tblExa,$var);
+}

@@ -1,0 +1,12 @@
+// @param string $side - [ ,left,right] type of siding
+// @param string $viewport - media section in class name
+// @param bool $important - add important to float
+@mixin helpers-float($side:'',$viewport:'', $important:0){
+  .sided#{add-dash($side)}#{add-dash($viewport)}{
+    @if empty($side) == 1{
+      overflow: hidden;
+    } @else {
+      float: #{empty($side,left)}#{add-important($important)};
+    }
+  }
+}

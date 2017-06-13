@@ -1,0 +1,85 @@
+// @include list-example-xs();
+// @include list-example-sm();
+// @include list-example-md();
+// @include list-example-lg();
+// @include list-example-xl();
+// @include list-example-dev();
+// @include list-example-mob();
+// @include list-example-xso();
+// @include list-example-smo();
+// @include list-example-mdo();
+// @include list-example-lgo();
+
+@mixin list-example-xs(){
+/** list-example xs */
+    .list-example{}
+}
+@mixin list-example-sm(){
+/** list-example sm */
+    .list-example{}
+}
+@mixin list-example-md(){
+/** list-example md */
+    .list-example{}
+}
+@mixin list-example-lg(){
+/** list-example lg */
+    .list-example{}
+}
+@mixin list-example-xl(){
+/** list-example xl */
+    .list-example{}
+}
+@mixin list-example-dev(){
+    /** list-example dev */
+    .list-example{}
+}
+@mixin list-example-mob(){
+/** list-example mob */
+    .list-example{}
+}
+@mixin list-example-xso(){
+    /** list-example xso */
+    .list-example{}
+}
+@mixin list-example-smo(){
+/** list-example smo */
+    .list-example{}
+}
+@mixin list-example-mdo(){
+/** list-example mdo */
+    .list-example{}
+}
+@mixin list-example-lgo(){
+/** list-example lgo */
+    .list-example{}
+}
+// BLOCK VARIABLES BELOW
+// fn listexa
+$e_listExa:(
+  c: color(empty),
+
+  bgc: bgc(empty),
+  bgi: bgi(empty),
+
+  w: width(empty),
+  h: height(empty),
+
+  fw: font(w,empty),
+  ff: font(f,empty),
+  fz: font(s,empty),
+  lh: font(lh,empty),
+
+  pl: ind(empty),
+  pr: ind(empty),
+  pt: ind(empty),
+  pb: ind(empty),
+
+  ml: ind(empty),
+  mr: ind(empty),
+  mt: ind(empty),
+  mb: ind(empty)
+);
+@function listexa($var){
+    @return map_get($e_listExa,$var);
+}

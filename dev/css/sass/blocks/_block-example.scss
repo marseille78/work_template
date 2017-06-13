@@ -1,0 +1,85 @@
+// @include block-example-xs();
+// @include block-example-sm();
+// @include block-example-md();
+// @include block-example-lg();
+// @include block-example-xl();
+// @include block-example-dev();
+// @include block-example-mob();
+// @include block-example-xso();
+// @include block-example-smo();
+// @include block-example-mdo();
+// @include block-example-lgo();
+
+@mixin block-example-xs(){
+/** block-example xs */
+    .block-example{}
+}
+@mixin block-example-sm(){
+/** block-example sm */
+    .block-example{}
+}
+@mixin block-example-md(){
+/** block-example md */
+    .block-example{}
+}
+@mixin block-example-lg(){
+/** block-example lg */
+    .block-example{}
+}
+@mixin block-example-xl(){
+/** block-example xl */
+    .block-example{}
+}
+@mixin block-example-dev(){
+    /** block-example dev */
+    .block-example{}
+}
+@mixin block-example-mob(){
+/** block-example mob */
+    .block-example{}
+}
+@mixin block-example-xso(){
+    /** block-example xso */
+    .block-example{}
+}
+@mixin block-example-smo(){
+/** block-example smo */
+    .block-example{}
+}
+@mixin block-example-mdo(){
+/** block-example mdo */
+    .block-example{}
+}
+@mixin block-example-lgo(){
+/** block-example lgo */
+    .block-example{}
+}
+// BLOCK VARIABLES BELOW
+// fn blockexa
+$e_blockExa:(
+  c: color(empty),
+
+  bgc: bgc(empty),
+  bgi: bgi(empty),
+
+  w: width(empty),
+  h: height(empty),
+
+  fw: font(w,empty),
+  ff: font(f,empty),
+  fz: font(s,empty),
+  lh: font(lh,empty),
+
+  pl: ind(empty),
+  pr: ind(empty),
+  pt: ind(empty),
+  pb: ind(empty),
+
+  ml: ind(empty),
+  mr: ind(empty),
+  mt: ind(empty),
+  mb: ind(empty)
+);
+@function blockexa($var){
+    @return map_get($e_blockExa,$var);
+}

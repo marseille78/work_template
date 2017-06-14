@@ -552,9 +552,7 @@ include 'php/functions.php';
     <script src="/js/js.js"></script>
 </head>
 <body>
-        <?
         <?=render("page-".$_GET['page']); ?>
-        ?>
 </body>
 </html>
 ```

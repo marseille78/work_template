@@ -537,18 +537,7 @@ _page-[class-name].scss
 
 ```php
 <?
-ini_set('error_reporting', E_ALL);
-
-if($_GET['compile']==1){
-    chmod(__DIR__.'/html/',0777);
-    $dirs = scandir('./');
-    foreach ($dirs as $dir) {
-        if($dir == '.' || $dir == '..' || !preg_match('/page\-(.*)\.php/',$dir,$page)) continue;
-        $url = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/';
-        $html = file_get_contents($url.'?page='.$page[1]);
-        file_put_contents(__DIR__.'/html/page-'.$page[1].'.html',$html);
-    }
-}
+include 'php/functions.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

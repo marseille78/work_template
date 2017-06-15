@@ -3,7 +3,7 @@
 ini_set('display_errors', 1);
 ini_set('error_reporting', E_ALL);
 
-global $_TPLPATH,
+global $_TPLPATH, //TODO: set constants
        $_PAGETPLPATH,
        $_VARS;
 
@@ -19,12 +19,12 @@ include "config.php";
  * @return null|string
  */
 function render($tplName,$data=null,$cycle=null){
-    global $_TPLPATH, $_PAGETPLPATH;
+    global $_TPLPATH, $_PAGETPLPATH, $_BASEPATH;
     $tpl = null;
-    if(file_exists($_TPLPATH.$tplName.'.php')){
-        $tpl = $_TPLPATH.$tplName.'.php';
-    }elseif (file_exists($_PAGETPLPATH.$tplName.'.php')){
-        $tpl = $_PAGETPLPATH.$tplName.'.php';
+    if(file_exists($_BASEPATH.'/'.$_TPLPATH.$tplName.'.php')){
+        $tpl = $_BASEPATH.'/'.$_TPLPATH.$tplName.'.php';
+    }elseif (file_exists($_BASEPATH.'/'.$_PAGETPLPATH.$tplName.'.php')){
+        $tpl = $_BASEPATH.'/'.$_PAGETPLPATH.$tplName.'.php';
     }
     if(is_null($data)){
         $data = getVars($tplName);
@@ -108,25 +108,15 @@ function getVars($name){
  * @param * $var
  * @return string|*
  */
-// function variable($var,$key){
-//     return empty($var[$key])
-//         ? (isset($var[$key])
-//             ? (is_array($var[$key])
-//                 ? []
-//                 : '')
-//             : null
-//           )
-//         : $var[$key];
-// }
-function variable($var){
-    return isset($var) 
-    ? (empty($var) 
-        ? (is_array($var) 
-            ? [] 
-            : '' ) 
-        : $var ) 
+function variable($var,$key){
+    return isset($var[$key])
+    ? (empty($var[$key])
+        ? (is_array($var[$key])
+            ? []
+            : '' )
+        : $var[$key] )
     : null;
-} 
+}
 
 /**
  * PRE TEMPLATE
@@ -136,7 +126,7 @@ function variable($var){
  * [full|]
  */
 function createTpls($type='page'){
-    global $_BASEPATH;
+    global $_TPLPATH, $_PAGETPLPATH, $_BASEPATH;
     $path_tpl = $_BASEPATH.'/html/'.$type.'/';
     switch ($type){
         case 'page':
@@ -155,16 +145,31 @@ function createTpls($type='page'){
         case 'layers':
             debug('tpl creation. mode: '.$type);
             mkdir($path_tpl, 0777, true);
-            $dirs = scandir($_BASEPATH.'/templates/');
+            $dirs = scandir($_BASEPATH.'/'.$_TPLPATH);
             foreach ($dirs as $dir) {
                 if($dir == '.' || $dir == '..')
                     continue;
 
-                ob_start();
-                include $_BASEPATH.'/templates/'.$dir;
-                $html = ob_get_contents();
-                ob_end_clean();
+                $html = render(preg_replace('/\.php/','',$dir));
                 file_put_contents($path_tpl.$dir.'.html',$html);
+            }
+            break;
+        case 'triple':
+            debug('tpl creation. mode: '.$type);
+            mkdir($path_tpl, 0755, true);
+            $dirs = scandir($_BASEPATH.'/'.$_TPLPATH);
+            foreach ($dirs as $dir) {
+                if($dir == 'static_top.php' || $dir == 'static_bottom.php'){
+                    $html = render(preg_replace('/\.php/','',$dir));
+                    file_put_contents($path_tpl.$dir.'.html',$html);
+                }
+            }
+            $dirs = scandir($_BASEPATH);
+            foreach ($dirs as $dir) {
+                if(preg_match('/page\-.*\.php/',$dir)){
+                    $html = render(preg_replace('/\.php/','',$dir));
+                    file_put_contents($path_tpl.$dir.'.html',$html);
+                }
             }
             break;
     }

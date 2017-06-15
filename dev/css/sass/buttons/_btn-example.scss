@@ -1,0 +1,85 @@
+// @include btn-example-xs();
+// @include btn-example-sm();
+// @include btn-example-md();
+// @include btn-example-lg();
+// @include btn-example-xl();
+// @include btn-example-dev();
+// @include btn-example-mob();
+// @include btn-example-xso();
+// @include btn-example-smo();
+// @include btn-example-mdo();
+// @include btn-example-lgo();
+
+@mixin btn-example-xs(){
+/** btn-example xs */
+    .btn-example{}
+}
+@mixin btn-example-sm(){
+/** btn-example sm */
+    .btn-example{}
+}
+@mixin btn-example-md(){
+/** btn-example md */
+    .btn-example{}
+}
+@mixin btn-example-lg(){
+/** btn-example lg */
+    .btn-example{}
+}
+@mixin btn-example-xl(){
+/** btn-example xl */
+    .btn-example{}
+}
+@mixin btn-example-dev(){
+    /** btn-example dev */
+    .btn-example{}
+}
+@mixin btn-example-mob(){
+/** btn-example mob */
+    .btn-example{}
+}
+@mixin btn-example-xso(){
+    /** btn-example xso */
+    .btn-example{}
+}
+@mixin btn-example-smo(){
+/** btn-example smo */
+    .btn-example{}
+}
+@mixin btn-example-mdo(){
+/** btn-example mdo */
+    .btn-example{}
+}
+@mixin btn-example-lgo(){
+/** btn-example lgo */
+    .btn-example{}
+}
+// BLOCK VARIABLES BELOW
+// fn btnexa
+$e_btnExa:(
+  c: color(empty),
+
+  bgc: bgc(empty),
+  bgi: bgi(empty),
+
+  w: width(empty),
+  h: height(empty),
+
+  fw: font(w,empty),
+  ff: font(f,empty),
+  fz: font(s,empty),
+  lh: font(lh,empty),
+
+  pl: ind(empty),
+  pr: ind(empty),
+  pt: ind(empty),
+  pb: ind(empty),
+
+  ml: ind(empty),
+  mr: ind(empty),
+  mt: ind(empty),
+  mb: ind(empty)
+);
+@function btnexa($var){
+    @return map_get($e_btnExa,$var);
+}

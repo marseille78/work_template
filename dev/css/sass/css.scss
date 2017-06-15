@@ -15,19 +15,6 @@
 ;
 // DEFAULT SECTION TITLE
 
-
-
-
-@import "core/base/mixins/blocks-colored";
-
-.test_block {
-  @include blocks-colored;
-}
-
-
-
-
-
 //CONTENT FOR MIXINS
 //INCLUDE MIXINS HERE xs
 @include empty_content(xs);

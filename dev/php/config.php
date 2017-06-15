@@ -27,7 +27,7 @@ $_VARS['sasscat_example'] = [
     ],
     [
         'content'=>'I am sasscat_example content 1',
-        'data'=> [
+        'data-sasscat_example2' =>[
             ['content'=>'I am sasscat_example2 inside sasscat_example 1'],
             ['content'=>'I am sasscat_example2 inside sasscat_example 2'],
             ['content'=>'I am sasscat_example2 inside sasscat_example 3'],

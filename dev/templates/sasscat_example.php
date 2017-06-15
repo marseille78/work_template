@@ -1,23 +1,15 @@
 <?php
 /**
- * @param
+ * @rendered at: page-example.php,
+ * @param string $var['content']
+ * @param array $var['data'] - data for example_data2 tpl
  */
-// дефолтные данные
-$sasscat_example_def = array(
-);
-
-
-if(!empty($sasscat_example)){
-    $sasscat_example = array_merge($sasscat_example_def,$sasscat_example);
-}else{
-    $sasscat_example = $sasscat_example_def;
-}
 ?>
 <!-- sasscat_example START -->
-<p>Example text was here</p>
+<div class="class" style="margin-bottom: 1em; border: 1px solid #f00;">
+    <p><?=variable($var,'content'); ?></p>
+    <?=variable($var,'foreach-start-sasscat_example2'); ?>
+    <?=render('sasscat_example2',variable($var,'data-sasscat_example2')); ?>
+    <?=variable($var,'foreach-end-sasscat_example2'); ?>
+</div>
 <!-- sasscat_example END -->
-<?php
-if(!empty($sasscat_example)) {
-    $sasscat_example = $sasscat_example_def;
-}
-?>

@@ -635,6 +635,39 @@ variable($var, 'data')
 
 Данные для шаблона хранятся в файле `php/config.php` в котором находится глобальный массив данных `$_VARS`
 
+Ключи первого уровня массива `$_VARS` указывают на используемый шаблон
+
+```php
+//templates
+$_VARS['preview_form'] = [];
+$_VARS['preview_table'] = [];
+$_VARS['preview_tpg'] = [];
+```
+Ключ 2-го уровня `content` содержит в себе данные непосредственно используемого шаблона, без учета вложенности
+
+```php
+$_VARS['sasscat_example'] = [
+    [
+        'content'=>'I am sasscat_example content 1',
+    ],
+],
+```
+
+Ключ 2-го уровня `data` содержит в себе данные для передачи данных дочерних шаблонов
+
+```php
+$_VARS['sasscat_example'] = [
+    [
+        'content'=>'',
+        'data'=> [
+            ['content'=>'I am sasscat_example2 inside sasscat_example 1'],
+            ['content'=>'I am sasscat_example2 inside sasscat_example 2'],
+            ['content'=>'I am sasscat_example2 inside sasscat_example 3'],
+        ],
+    ],
+]
+```
+
 ### Функции
 
 ###### **_`getVars(tpl_name)`_** - Формирует набор данных для указанного шаблона

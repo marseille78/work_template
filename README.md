@@ -17,9 +17,9 @@
     * [Структура](https://github.com/marseille78/work_template#Структура)
     * [Данные](https://github.com/marseille78/work_template#Данные)
     * [Функции](https://github.com/marseille78/work_template#Функции)
-        * [getVars]()
-        * [render]()
-        * [variable]()
+        * [getVars](https://github.com/marseille78/work_template#getvarstpl_name---Формирует-набор-данных-для-указанного-шаблона)
+        * [render](https://github.com/marseille78/work_template#rendertpl_name-data-content-count-iteration---Сначала-формирует-массив-данных-для-отображения-затем-их-выводит)
+        * [variable](https://github.com/marseille78/work_template#variabledata-key---Управляет-отображениями-данных-data-в-шаблоне)
     * [Дебаггинг](https://github.com/marseille78/work_template#Дебаггинг)
     * [Стандартные шаблоны](https://github.com/marseille78/work_template#Стандартные-шаблоны)
 * [Сборка проекта](https://github.com/marseille78/work_template#Сборка-проекта)
@@ -545,7 +545,7 @@ _page-[class-name].scss
 
 1. Основной шаблон _`index.php`_
 
-При помощи функции [render()](link) создается шаблон нужной страницы _`page-[параметр GET-запроса].php`_
+При помощи функции [render()](https://github.com/marseille78/work_template#rendertpl_name-data-content-count-iteration---Сначала-формирует-массив-данных-для-отображения-затем-их-выводит) создается шаблон нужной страницы _`page-[параметр GET-запроса].php`_
 
 ```php
 <?
@@ -569,7 +569,7 @@ include 'php/functions.php';
 </html>
 ```
 
-2. Шаблон страницы открывается из файла _`page-[name].php`_, где `name` передается как значение `$_GET['page]`. При помощи функции [render(tpl_name)](link) подключаются нужные файлы шаблона блока `/templates/tpl_name.php`.
+2. Шаблон страницы открывается из файла _`page-[name].php`_, где `name` передается как значение `$_GET['page]`. При помощи функции [render(tpl_name)](https://github.com/marseille78/work_template#rendertpl_name-data-content-count-iteration---Сначала-формирует-массив-данных-для-отображения-затем-их-выводит) подключаются нужные файлы шаблона блока `/templates/tpl_name.php`.
 
 
 
@@ -582,7 +582,7 @@ include 'php/functions.php';
 <!-- page-example END -->
 ```
 
-3. Шаблон блока _`/templates/tpl_name.php`_. В нем выводится содержимое выводимого шаблона блока при помощи функции [variable()](link). В массив `$var` можно передать данные для вложенного шаблона при помощи ключа `data`.
+3. Шаблон блока _`/templates/tpl_name.php`_. В нем выводится содержимое выводимого шаблона блока при помощи функции [variable()](https://github.com/marseille78/work_template#variabledata-key---Управляет-отображениями-данных-data-в-шаблоне). В массив `$var` можно передать данные для вложенного шаблона при помощи ключа `data`.
 
 ```php
 variable($var, 'data')
@@ -608,7 +608,7 @@ variable($var, 'data')
 <!-- [tpl_name] END -->
 ```
 
-В поле `content`, полученного при помощи функции [render()](link), массива `$var` содержится контент непосредственно самого блока. Если этот блок является родительским для более мелких, то они подключаются при помощи функции [render()](link)
+В поле `content`, полученного при помощи функции [render()](https://github.com/marseille78/work_template#rendertpl_name-data-content-count-iteration---Сначала-формирует-массив-данных-для-отображения-затем-их-выводит), массива `$var` содержится контент непосредственно самого блока. Если этот блок является родительским для более мелких, то они подключаются при помощи функции [render()](https://github.com/marseille78/work_template#rendertpl_name-data-content-count-iteration---Сначала-формирует-массив-данных-для-отображения-затем-их-выводит)
 
 Пример отображения содержимого шаблона без вложенности указан в файле `/dev/templates/sasscat_example2.php`
 ```php
@@ -623,13 +623,13 @@ variable($var, 'data')
 ```php
 <!-- sasscat_example START -->
 <div>
-  <p><?=variable($var['content']); ?></p>
+  <p><?=variable($var, 'content'); ?></p>
   <?=render('sasscat_example2',variable($var, 'data')); ?>
 </div>
 <!-- sasscat_example END -->
 ```
 
-В шаблонах с запланированным циклом устанавливается переменная-пустышка `variable($var,'foreach')`
+В шаблонах с запланированным циклом устанавливается переменная-пустышка [variable($var,'foreach')](https://github.com/marseille78/work_template#variabledata-key---Управляет-отображениями-данных-data-в-шаблоне)
 
 ### Данные
 
@@ -658,7 +658,7 @@ variable($var, 'data')
 * Если указан 3-й параметр _принудительное количество повторений_, то содержимое выводится указанное количество повторений. Причем если количество повторений превышает количество переданых данных, то они беруться из 1-й итерации данных текущего блока, если же количество повторений меньше передаваемых данных, то выводится по очереди указанное количество, остальное отбрасывается. **_По окончании работы этот параметр из вызова функции удалить!!!_**
 
 ###### **_`variable(data, key)`_** - Управляет отображениями данных `data` в шаблоне
-    * `data` - данные , которые генерируется при помощи функции `render()` и передаются для данной страницы
+    * `data` - данные, которые генерируется при помощи функции render() и передаются для данной страницы
     * `key` - ключ используемых данных
 
 ### Дебаггинг

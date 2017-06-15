@@ -2,49 +2,49 @@
 
 //# MAPS
 
-@function color($var){
+@function _color($var){
   @if $var == empty{
     @return "";
   }
   @return map_get($g_Color,$var);
 }
-@function width($var){
+@function _width($var){
   @if $var == empty{
     @return "";
   }
   @return map_get($g_Width,$var);
 }
-@function height($var){
+@function _height($var){
   @if $var == empty{
     @return "";
   }
   @return map_get($g_Height,$var);
 }
-@function size($var){
+@function _size($var){
   @if $var == empty{
     @return "";
   }
   @return map_get($g_Size,$var);
 }
-@function ind($var){
+@function _ind($var){
   @if $var == empty{
     @return "";
   }
   @return map_get($g_Indentations,$var);
 }
-@function bgc($var){
+@function _bgc($var){
   @if $var == empty{
     @return "";
   }
   @return map_get($g_BackgroundColors,$var);
 }
-@function bgi($var){
+@function _bgi($var){
   @if $var == empty{
     @return "";
   }
   @return map_get($g_BackgroundImages,$var);
 }
-@function font($fn,$var){
+@function _font($fn,$var){
   @if $var == empty{
     @return "";
   }

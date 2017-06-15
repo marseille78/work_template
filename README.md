@@ -542,7 +542,7 @@ _page-[class-name].scss
 3. Подключить (_`@import`_) новый файл в _`/core/_project_placeholders.scss`_
 4. Подключить (_`@include`_) новый файл в
     1. _`/core/_project_placeholders.scss`_ в соответствующий _`pl-multyblock`_ если надо чтобы групировка происходила в начале медиа роздела
-    2. или _`/core/placeholders/category/_[category-name].scss`_ если надо чтобы группировка происходила в начале соответствующего **раздела/подраздела**
+    2. или _`/core/placeholders/category/_[category-name].scss`_ если надо чтобы группировка происходила в начале соответствующей **категории**
     
 **Локальные/Местные**
 

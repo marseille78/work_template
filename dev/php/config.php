@@ -12,7 +12,7 @@ $_VARS = [];
  * $_VARS['key'] = [[],[],[],...]
  */
 //templates
-$_VARS['preview_form'] = [];
+/*$_VARS['preview_form'] = [];
 $_VARS['preview_table'] = [];
 $_VARS['preview_tpg'] = [];
 $_VARS['sasscat_example2'] = [
@@ -52,4 +52,39 @@ $_VARS['page-example'] = [
         'left'=>render('sasscat_example2'),
     ],
 ];
-$_VARS['page-preview'] = [];
+$_VARS['page-preview'] = [];*/
+
+$_VARS['tbl_products'] = [
+    [
+        'row' => [
+            [
+                'field1' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+                'field2' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+                'field3' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+                'field4' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+                'field5' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+            ],
+            // [
+            //     'field1' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+            //     'field2' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+            //     'field3' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+            //     'field4' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+            //     'field5' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+            // ],
+            // [
+            //     'field1' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+            //     'field2' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+            //     'field3' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+            //     'field4' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+            //     'field5' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+            // ],
+            // [
+            //     'field1' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+            //     'field2' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+            //     'field3' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+            //     'field4' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+            //     'field5' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+            // ],
+        ],
+    ],
+];

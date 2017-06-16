@@ -61,7 +61,7 @@ function render($tplName,$data=null,$cycle=null){
 //            if($tplName == 'sasscat_example2') var_dump($cycle);
             if(!is_null($cycle) && is_int($cycle)){
                 for($i=0;$i<$cycle;$i++){
-                    if(is_array($data[$i])){
+                    if(isset($data[$i]) && is_array($data[$i])){
                         if(empty($data[$i])){
                             continue;
                         }

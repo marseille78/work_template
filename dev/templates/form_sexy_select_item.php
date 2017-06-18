@@ -1,0 +1,1 @@
+<option value=""><?=variable($var, 'country'); ?></option>

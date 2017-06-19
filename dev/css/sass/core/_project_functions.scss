@@ -42,13 +42,13 @@
   @if $var == empty{
     @return "";
   }
-  @return map_get($g_BackgroundColors,$var);
+  @return map_get($g_BgColors,$var);
 }
 @function _bgi($var){
   @if $var == empty{
     @return "";
   }
-  @return map_get($g_BackgroundImages,$var);
+  @return map_get($g_BgImages,$var);
 }
 @function _font($fn,$var){
   @if $var == empty{

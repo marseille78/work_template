@@ -174,9 +174,9 @@ mobile first structure
 
 * _`/project/_project_vars.scss`_
 ```scss
-$g_fonts:(
-        proxima: "'proxima-nova',Helvetica,Arial,sans-serif",
-        georgia: "Georgia, 'Times New Roman', Times, serif"
+$g_Fonts:(
+        base: "'proxima-nova',Helvetica,Arial,sans-serif",
+        second: "Georgia, 'Times New Roman', Times, serif"
 );
 ```
 * _`/project/_project_functions.`_ (**!!! Названия ф-й для получения базовой глобальной переменной должны начинаться с `_`**)

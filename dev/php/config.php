@@ -58,33 +58,105 @@ $_VARS['tbl_products'] = [
     [
         'row' => [
             [
-                'field1' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
-                'field2' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
-                'field3' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
-                'field4' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
-                'field5' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
+                'field_id_checkout' => 'field_id_checkout_1',
+                'field_name' => '1 Femail test',
+                'field_per_pill' => '&euro;&nbsp;3.76',
+                'field_savings' => '&euro;&nbsp;37.65',
+                'field_btn' => 'Add to cart',
             ],
-            // [
-            //     'field1' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
-            //     'field2' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
-            //     'field3' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
-            //     'field4' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
-            //     'field5' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
-            // ],
-            // [
-            //     'field1' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
-            //     'field2' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
-            //     'field3' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
-            //     'field4' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
-            //     'field5' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
-            // ],
-            // [
-            //     'field1' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
-            //     'field2' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
-            //     'field3' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
-            //     'field4' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
-            //     'field5' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos unde sunt culpa, in cum explicabo accusamus, deleniti. Nihil fugit, labore, dolorum asperiores beatae quo repellat corrupti! Molestias iusto quam harum.',
-            // ],
+            [
+                'field_id_checkout' => 'field_id_checkout_1',
+                'field_name' => '5 Femails test',
+                'field_per_pill' => '&euro;&nbsp;3.76',
+                'field_savings' => '&euro;&nbsp;37.65',
+                'field_btn' => 'Add to cart',
+            ],
+            [
+                'field_id_checkout' => 'field_id_checkout_1',
+                'field_name' => '10 Femails test',
+                'field_per_pill' => '&euro;&nbsp;3.76',
+                'field_savings' => '&euro;&nbsp;37.65',
+                'field_btn' => 'Add to cart',
+            ],
+            [
+                'field_id_checkout' => 'field_id_checkout_1',
+                'field_name' => '5 Femails test',
+                'field_per_pill' => '&euro;&nbsp;3.76',
+                'field_savings' => '&euro;&nbsp;37.65',
+                'field_btn' => 'Add to cart',
+            ],
+        ],
+    ],
+];
+
+$_VARS['block_smart_cart'] = [
+    [
+        'top_view' => [
+            [
+                'btn_checkout' => 'Checkout',
+                'smart_cart_name' => 'Shopping cart',
+                'amount_price' => '&euro;&nbsp;45.95',
+            ],
+        ],
+        'items' => [
+            [
+                'item-view' => 'http://lapku.ru/images/42487/kak-uzanat-pochemu-krichit-kotenok.jpg',
+                'item-name' => 'Коте',
+                'item-desc' => '50mg + 30mg + 12 tablet',
+                'item-btn-remove' => 'Close',
+                'item-btn-checkout' => 'Checkout',
+                'item-total-amount' => 1,
+                'item-total-price' => '&euro;&nbsp;10.50',
+            ],
+            [
+                'item-view' => 'http://lapku.ru/images/42487/kak-uzanat-pochemu-krichit-kotenok.jpg',
+                'item-name' => 'Коте',
+                'item-desc' => '50mg + 30mg + 12 tablet',
+                'item-btn-remove' => 'Close',
+                'item-btn-checkout' => 'Checkout',
+                'item-total-amount' => 1,
+                'item-total-price' => '&euro;&nbsp;10.50',
+            ],
+        ],
+    ],
+];
+
+$_VARS['blocks_select-country'] = [
+    [
+        'data_form_sexy_select' => [
+            [
+                'id' => 'select_countries_1',
+                'data_form_sexy_select_item' => [
+                    [
+                        'text' => 'hsdfvbudfv', 
+                    ],
+                    [
+                        'text' => 'hsdfvbudfv', 
+                    ],
+                    [
+                        'text' => 'hsdfvbudfv', 
+                    ],
+                    [
+                        'text' => 'hsdfvbudfv', 
+                    ],
+                ]
+            ],
+            [
+                'id' => 'select_countries_2',
+                'data_form_sexy_select_item' => [
+                    [
+                        'text' => 'kcxvbidsfvbdfs',
+                    ]
+                ]
+            ],
+            [
+                'id' => 'select_countries_3',
+                'data_form_sexy_select_item' => [
+                    [
+                        'text' => 'hsdfvbudfv66666',
+                    ]
+                ]
+            ],
         ],
     ],
 ];

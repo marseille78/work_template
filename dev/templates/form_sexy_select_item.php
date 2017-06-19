@@ -1,1 +1,1 @@
-<option value=""><?=variable($var, 'country'); ?></option>
+<option value=""><?=variable($var, 'text'); ?></option>

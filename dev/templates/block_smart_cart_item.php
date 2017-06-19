@@ -7,7 +7,7 @@
  * @param string $var['item-price']
  * @param string $var['item-btn-remove']
  * @param string $var['item-btn-checkout']
- * @param string $var['item-total-amount']
+ * @param integer $var['item-total-amount']
  * @param string $var['item-total-price']
  */
 ?>

@@ -2,6 +2,12 @@
 
 //# MAPS
 
+@function _palette($var){
+  @if $var == empty{
+    @return "";
+  }
+  @return map_get($colorMap,$var);
+}
 @function _color($var){
   @if $var == empty{
     @return "";
@@ -48,16 +54,16 @@
   @if $var == empty{
     @return "";
   }
-  @if $fn == w{
+  @if $fn == fw{
     @return map_get($g_FontWeight,$var);
   }
-  @if $fn == s{
+  @if $fn == fz{
     @return map_get($g_FontSize,$var);
   }
   @if $fn == lh{
     @return map_get($g_LineHeight,$var);
   }
-  @if $fn == f{
+  @if $fn == ff{
     @return map_get($g_FontFamely,$var);
   }
 }

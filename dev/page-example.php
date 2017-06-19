@@ -6,6 +6,6 @@
 <h2>Смарт карт</h2>
 <?=render('block_smart_cart'); ?>
 
-<h2>Sexy select</h2>
-<?=render('block_select_country'); ?>
+<h2>Select country</h2>
+<?=render('blocks_select-country'); ?>
 <!-- page-example END

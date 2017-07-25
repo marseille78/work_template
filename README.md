@@ -166,6 +166,132 @@ mobile first structure
 // CATEGORY [ИМЯ КАТЕГОРИИ] END
 ```
 
+### Создание SCSS-файла для блока
+
+```scss
+// @include {{name-block}}-xs();
+// @include {{name-block}}-sm();
+// @include {{name-block}}-md();
+// @include {{name-block}}-lg();
+// @include {{name-block}}-xl();
+// @include {{name-block}}-dev();
+// @include {{name-block}}-mob();
+// @include {{name-block}}-xso();
+// @include {{name-block}}-smo();
+// @include {{name-block}}-mdo();
+// @include {{name-block}}-lgo();
+
+// BLOCK VARIABLES BELOW
+
+@mixin {{name-block}}-xs(){
+/* {{name-block}} xs /
+    .{{name-class}}{$END$}
+}
+@mixin {{name-block}}-sm(){
+/* {{name-block}} sm /
+    .{{name-class}}{}
+}
+@mixin {{name-block}}-md(){
+/* {{name-block}} md /
+    .{{name-class}}{}
+}
+@mixin {{name-block}}-lg(){
+/* {{name-block}} lg /
+    .{{name-class}}{}
+}
+@mixin {{name-block}}-xl(){
+/* {{name-block}} xl /
+    .{{name-class}}{}
+}
+@mixin {{name-block}}-dev(){
+/* {{name-block}} dev /
+    .{{name-class}}{}
+}
+@mixin {{name-block}}-mob(){
+/* {{name-block}} mob /
+    .{{name-class}}{}
+}
+@mixin {{name-block}}-xso(){
+/* {{name-block}} xso /
+    .{{name-class}}{}
+}
+@mixin {{name-block}}-smo(){
+/* {{name-block}} smo /
+    .{{name-class}}{}
+}
+@mixin {{name-block}}-mdo(){
+/* {{name-block}} mdo /
+    .{{name-class}}{}
+}
+@mixin {{name-block}}-lgo(){
+/* {{name-block}} lgo /
+    .{{name-class}}{}
+}
+```
+
+Live-Template для PHPStorm:
+
+```scss
+// @include $PARAGRAPH$-xs();
+// @include $PARAGRAPH$-sm();
+// @include $PARAGRAPH$-md();
+// @include $PARAGRAPH$-lg();
+// @include $PARAGRAPH$-xl();
+// @include $PARAGRAPH$-dev();
+// @include $PARAGRAPH$-mob();
+// @include $PARAGRAPH$-xso();
+// @include $PARAGRAPH$-smo();
+// @include $PARAGRAPH$-mdo();
+// @include $PARAGRAPH$-lgo();
+
+// BLOCK VARIABLES BELOW
+
+@mixin $PARAGRAPH$-xs(){
+/* $PARAGRAPH$ xs /
+    .$NAME${$END$}
+}
+@mixin $PARAGRAPH$-sm(){
+/* $PARAGRAPH$ sm /
+    .$NAME${}
+}
+@mixin $PARAGRAPH$-md(){
+/* $PARAGRAPH$ md /
+    .$NAME${}
+}
+@mixin $PARAGRAPH$-lg(){
+/* $PARAGRAPH$ lg /
+    .$NAME${}
+}
+@mixin $PARAGRAPH$-xl(){
+/* $PARAGRAPH$ xl /
+    .$NAME${}
+}
+@mixin $PARAGRAPH$-dev(){
+/* $PARAGRAPH$ dev /
+    .$NAME${}
+}
+@mixin $PARAGRAPH$-mob(){
+/* $PARAGRAPH$ mob /
+    .$NAME${}
+}
+@mixin $PARAGRAPH$-xso(){
+/* $PARAGRAPH$ xso /
+    .$NAME${}
+}
+@mixin $PARAGRAPH$-smo(){
+/* $PARAGRAPH$ smo /
+    .$NAME${}
+}
+@mixin $PARAGRAPH$-mdo(){
+/* $PARAGRAPH$ mdo /
+    .$NAME${}
+}
+@mixin $PARAGRAPH$-lgo(){
+/* $PARAGRAPH$ lgo /
+    .$NAME${}
+}
+```
+
 ### Использование переменных
 
 Переменные проекта должны использовать в названии _`camelCamp`_. Название глобальной основной переменной выглядит так: _`$g_varName`_.
@@ -232,6 +358,33 @@ $g_Fonts:(
 * Локальная переменная создается при использовании значения не менее 2-х раз
 * Локальные стили объединяем в локальные мапы с именем `$e_[имя-файла]`
 * Локальные мапы с функциями для получения значений объявляем вверху файла, перед определениями стилей
+
+**Пример создания набора переменных для отдельно-взятого блока с функцией получения значения из этого набора:**
+
+```php
+$e_{{file-name}}:(
+    key: value
+);
+
+@function {{file-name}}($var){
+    @return map_get($e_{{file-name}}, $var);
+}
+```
+
+**Вероятный вариант LiveTemplate для PHPStorm:**
+
+```php
+// fn $BLOCKFNNAME$
+$USD$e_$VARNAME$:(
+// _color(){$USD$g_Colors},_bgc(){$USD$g_BackgroundColors},
+// _bgi(){$USD$g_BackgroundImages},_width(){$USD$g_Width},_height(){$USD$g_Height},
+// _font([w|f|s|lh],key){$USD$g_FontWeight|Size|Famely|LineHeight},_ind(){$USD$g_Indentations},
+
+);
+@function $BLOCKFNNAME$($USD$var){
+    @return map_get($USD$e_$VARNAME$,$USD$var);
+}
+```
 
 **Базовые scss-функции для получения значений переменных:**
 
@@ -484,76 +637,76 @@ _page-[class-name].scss
 1. Создаем файл в _`/core/placeholders/elements/`_
 2. Заготовка (содержание файла _`css/sass/core/placeholders/elements/_pl-example2.scss`_):
 ```scss
-// @include pl_blocks_example-name-xs;
-// @include pl_blocks_example-name-sm;
-// @include pl_blocks_example-name-md;
-// @include pl_blocks_example-name-lg;
-// @include pl_blocks_example-name-xl;
-// @include pl_blocks_example-name-xso;
-// @include pl_blocks_example-name-mob;
-// @include pl_blocks_example-name-dev;
-// @include pl_blocks_example-name-smo;
-// @include pl_blocks_example-name-mdo;
-// @include pl_blocks_example-name-lgo;
+// @include pl_{{name-placeholder}}-xs;
+// @include pl_{{name-placeholder}}-sm;
+// @include pl_{{name-placeholder}}-md;
+// @include pl_{{name-placeholder}}-lg;
+// @include pl_{{name-placeholder}}-xl;
+// @include pl_{{name-placeholder}}-xso;
+// @include pl_{{name-placeholder}}-mob;
+// @include pl_{{name-placeholder}}-dev;
+// @include pl_{{name-placeholder}}-smo;
+// @include pl_{{name-placeholder}}-mdo;
+// @include pl_{{name-placeholder}}-lgo;
 
-@mixin pl_blocks_example-name{
+@mixin pl_{{name-placeholder}}{
   //some css was here
 }
 
 //---------------------------//
-@mixin pl_blocks_example-name-xs{
-  %pl_blocks_example-name-xs{
-    @include pl_blocks_example-name;
+@mixin pl_{{name-placeholder}}-xs{
+  %pl_{{name-placeholder}}-xs{
+    @include pl_{{name-placeholder}};
   }
 }
-@mixin pl_blocks_example-name-sm{
-  %pl_blocks_example-name-sm{
-    @include pl_blocks_example-name;
+@mixin pl_{{name-placeholder}}-sm{
+  %pl_{{name-placeholder}}-sm{
+    @include pl_{{name-placeholder}};
   }
 }
-@mixin pl_blocks_example-name-md{
-  %pl_blocks_example-name-md{
-    @include pl_blocks_example-name;
+@mixin pl_{{name-placeholder}}-md{
+  %pl_{{name-placeholder}}-md{
+    @include pl_{{name-placeholder}};
   }
 }
-@mixin pl_blocks_example-name-lg{
-  %pl_blocks_example-name-lg{
-    @include pl_blocks_example-name;
+@mixin pl_{{name-placeholder}}-lg{
+  %pl_{{name-placeholder}}-lg{
+    @include pl_{{name-placeholder}};
   }
 }
-@mixin pl_blocks_example-name-xl{
-  %pl_blocks_example-name-xl{
-    @include pl_blocks_example-name;
+@mixin pl_{{name-placeholder}}-xl{
+  %pl_{{name-placeholder}}-xl{
+    @include pl_{{name-placeholder}};
   }
 }
-@mixin pl_blocks_example-name-xso{
-  %pl_blocks_example-name-xso{
-    @include pl_blocks_example-name;
+@mixin pl_{{name-placeholder}}-xso{
+  %pl_{{name-placeholder}}-xso{
+    @include pl_{{name-placeholder}};
   }
 }
-@mixin pl_blocks_example-name-mob{
-  %pl_blocks_example-name-mob{
-    @include pl_blocks_example-name;
+@mixin pl_{{name-placeholder}}-mob{
+  %pl_{{name-placeholder}}-mob{
+    @include pl_{{name-placeholder}};
   }
 }
-@mixin pl_blocks_example-name-dev{
-  %pl_blocks_example-name-dev{
-    @include pl_blocks_example-name;
+@mixin pl_{{name-placeholder}}-dev{
+  %pl_{{name-placeholder}}-dev{
+    @include pl_{{name-placeholder}};
   }
 }
-@mixin pl_blocks_example-name-smo{
-  %pl_blocks_example-name-smo{
-    @include pl_blocks_example-name;
+@mixin pl_{{name-placeholder}}-smo{
+  %pl_{{name-placeholder}}-smo{
+    @include pl_{{name-placeholder}};
   }
 }
-@mixin pl_blocks_example-name-mdo{
-  %pl_blocks_example-name-mdo{
-    @include pl_blocks_example-name;
+@mixin pl_{{name-placeholder}}-mdo{
+  %pl_{{name-placeholder}}-mdo{
+    @include pl_{{name-placeholder}};
   }
 }
-@mixin pl_blocks_example-name-lgo{
-  %pl_blocks_example-name-lgo{
-    @include pl_blocks_example-name;
+@mixin pl_{{name-placeholder}}-lgo{
+  %pl_{{name-placeholder}}-lgo{
+    @include pl_{{name-placeholder}};
   }
 }
 ```
@@ -567,6 +720,83 @@ _page-[class-name].scss
 Так же для локальных группировок стилей между несколькими блоками внутри одного блока можно создавать так называемые локальные плейсхолдеры название которых должно состоять из: _`%pll-[base-class-name]`_.
 
 Стили для такого плейсхолдера прописываются внутри соответствующего миксина в файле блока.
+
+**Примерный LiveTemplate для созданий плейсхолдера:**
+
+```scss
+// @include pl_$NAME$-xs;
+// @include pl_$NAME$-sm;
+// @include pl_$NAME$-md;
+// @include pl_$NAME$-lg;
+// @include pl_$NAME$-xl;
+// @include pl_$NAME$-dev;
+// @include pl_$NAME$-mob;
+// @include pl_$NAME$-xso;
+// @include pl_$NAME$-smo;
+// @include pl_$NAME$-mdo;
+// @include pl_$NAME$-lgo;
+
+@mixin pl_$NAME${
+  $VAL$
+}
+
+//---------------------------//
+@mixin pl_$NAME$-xs{
+  %$NAME$-xs{
+    @include pl_$NAME$;
+  }
+}
+@mixin pl_$NAME$-sm{
+  %$NAME$-sm{
+    @include pl_$NAME$;
+  }
+}
+@mixin pl_$NAME$-md{
+  %$NAME$-md{
+    @include pl_$NAME$;
+  }
+}
+@mixin pl_$NAME$-lg{
+  %$NAME$-lg{
+    @include pl_$NAME$;
+  }
+}
+@mixin pl_$NAME$-xl{
+  %$NAME$-xl{
+    @include pl_$NAME$;
+  }
+}
+@mixin pl_$NAME$-dev{
+  %$NAME$-dev{
+    @include pl_$NAME$;
+  }
+}
+@mixin pl_$NAME$-mob{
+  %$NAME$-mob{
+    @include pl_$NAME$;
+  }
+}
+@mixin pl_$NAME$-xso{
+  %$NAME$-xso{
+    @include pl_$NAME$;
+  }
+}
+@mixin pl_$NAME$-smo{
+  %$NAME$-smo{
+    @include pl_$NAME$;
+  }
+}
+@mixin pl_$NAME$-mdo{
+  %$NAME$-mdo{
+    @include pl_$NAME$;
+  }
+}
+@mixin pl_$NAME$-lgo{
+  %$NAME$-lgo{
+    @include pl_$NAME$;
+  }
+}
+```
 
 ### Именование классов
 
@@ -639,9 +869,15 @@ include 'php/functions.php';
 <!-- page-example START -->
 <h1>Example page</h1>
 
-<?=render(tpl_name, key_data); ?>
+<?=render(tpl_name, data_key); ?>
 
 <!-- page-example END -->
+```
+
+**Вероятный вариант LiveTemplate для PHPStorm:**
+
+```php
+<?=render('$VAR$',variable($var,'data_$VAR$')); ?>
 ```
 
 3. Шаблон блока _`/templates/tpl_name.php`_. В нем выводится содержимое выводимого шаблона блока при помощи функции [variable()](https://github.com/marseille78/work_template#variabledata-key---Управляет-отображениями-данных-data-в-шаблоне). В массив `$var` можно передать данные для вложенного шаблона при помощи ключа `data`.
@@ -650,9 +886,16 @@ include 'php/functions.php';
 variable($var, 'data')
 ```
 
+**Вероятный вариант LiveTemplate для PHPStorm:**
+
+```php
+<?=variable($var, '$END$'); ?>
+```
+
 Именование шаблона `tpl_name` производится по принципу: _`[sass-category]_[main-class-name].php`_
 
 В верху шаблона устанавливаются комментарии с значениями `@rendered at` - указывающими шаблоны, в которых подключается данный шаблон, `@param` - описыващие применяемые в шаблоне данные
+
 ```php
 <?php
 /**
@@ -668,6 +911,51 @@ variable($var, 'data')
 ...
 HTML-code
 ...
+```
+
+**Вероятный вариант LiveTemplate для PHPStorm:**
+
+```php
+<?php
+/**
+ * @rendered at: $RENDERED$
+ * @param
+ */
+?>
+<!-- $FILENAME$ START -->
+$END$
+<!-- $FILENAME$ END -->
+```
+
+**Вероятный вариант LiveTemplate для PHPStorm для описания параметров для переменной типа `array`:**
+
+```php
+@param array 'data_$END$'
+```
+
+**Вероятный вариант LiveTemplate для PHPStorm для описания параметров для переменной в цикле:**
+
+```php
+@param string 'for_$NAME$_start'
+* @param string 'for_$NAME$_end'
+```
+
+**Вероятный вариант LiveTemplate для PHPStorm для описания параметров для переменной с условием if:**
+
+```php
+@param bool 'use_$NAME$'
+* @param string 'if_$NAME$_start'
+* @param string 'if_$NAME$_end'
+```
+
+**Вероятный вариант LiveTemplate для PHPStorm для описания параметров для переменной с условием if-else:**
+
+```php
+@param bool 'use_$NAME$'
+* @param bool 'use_$NAME$_else'
+* @param string 'if_$NAME$_start'
+* @param string 'if_$NAME$_else'
+* @param string 'if_$NAME$_end'
 ```
 
 Пример отображения содержимого шаблона без вложенности указан в файле `/dev/templates/sasscat_example2.php`
@@ -690,6 +978,70 @@ HTML-code
 ```
 
 В шаблонах с запланированным циклом устанавливается переменная-пустышка [variable($var,'foreach')](https://github.com/marseille78/work_template#variabledata-key---Управляет-отображениями-данных-data-в-шаблоне)
+
+**Условие `if` в шаблоне:**
+
+```php
+<? if(variable($var,'use_var-name')){ ?>
+    <?=variable($var,'if_var-name_start'); ?>
+    <!-- code -->
+    <?=variable($var,'if_var-name_end'); ?>
+<? } ?>
+```
+
+**Вероятный вариант LiveTemplate для PHPStorm:**
+
+```php
+<? if(variable($var,'use_$VAR$')){ ?>
+    <?=variable($var,'if_$VAR$_start'); ?>
+    $END$
+    <?=variable($var,'if_$VAR$_end'); ?>
+<? } ?>
+```
+
+**Условие `if-else` (по сути, двойной `if`) в шаблоне:**
+
+```php
+<?=variable($var,'if_{{var-name}}_start'); ?>
+    <? if(variable($var,'use_{{var-name}}')){ ?>
+        <!-- code для перового условия -->
+    <? } ?>
+    <?=variable($var,'if_{{var-name}}_else'); ?>
+    <? if(variable($var,'use_{{var-name}}_else')){ ?>
+        <!-- code для второго условия -->
+    <? } ?>
+<?=variable($var,'if_{{var-name}}_end'); ?>
+```
+
+**Вероятный вариант LiveTemplate для PHPStorm:**
+
+```php
+<?=variable($var,'if_$VAR$_start'); ?>
+<? if(variable($var,'use_$VAR$')){ ?>
+    $END$
+<? } ?>
+<?=variable($var,'if_$VAR$_else'); ?>
+<? if(variable($var,'use_$VAR$_else')){ ?>
+    
+<? } ?>
+<?=variable($var,'if_$VAR$_end'); ?>
+```
+
+**Циклический вывод файла в шаблоне:**
+
+```php
+<?=variable($var,'for_{{file-name}}_start'); ?>
+<!-- code -->
+<?=variable($var,'for_{{file-name}}_end'); ?>
+```
+
+**Вероятный вариант LiveTemplate для PHPStorm:**
+
+```php
+<?=variable($var,'for_$VAR$_start'); ?>
+$END$
+<?=variable($var,'for_$VAR$_end'); ?>
+```
 
 ### Данные
 
@@ -739,6 +1091,45 @@ $_VARS['sasscat_example'] = [
         'data'=> [],
     ],
 ]
+```
+
+**Вероятный вариант LiveTemplate для PHPStorm для создания данных для файла в файле `php/config.php`:**
+
+```php
+$_VARS['$FILE$'] = [
+    'type'=>'$TYPE$',
+    'file'=>[
+        'name'=>'$FILE2$',
+        'ext'=>'$EXT$',
+        'skip'=>$SKIP$,
+    ],
+    [
+        $END$
+    ],
+];
+```
+
+**Создание поля переменной для данных `php/config.php`:**
+
+```php
+'data_{{file-name}}'=>[
+    [
+        <!-- data -->
+    ],
+],
+```
+
+**Вероятный вариант LiveTemplate для PHPStorm для создания данных для полей данных в файле `php/config.php`:**
+
+```php
+'$DATA$'=>[
+    [
+        $END$
+    ],
+//    [
+//        
+//    ],
+],
 ```
 
 Рекомендации к именованию переменных, отвечающих за отображение данных:
@@ -795,6 +1186,20 @@ ini_set('display_errors', 1);
 Увидеть эти шаблоны можно на тестовой странице `page-preview.php`
 
 Также в случае создания какого-то блока который заведомо не будет использован (например блок определяющий какие-то особенные стили внутри статьи которая будет находиться в базе либо еще где-то) стоит поместить его в файл _`tmp_[sass-cat-name]_[main-class-name].php`_
+
+### Очередность разработки проекта
+
+1. Конструкция
+    1. Основные цвета сайта
+    2. Конструкция контента
+    3. Другое
+2. Блоки
+    1. Кнопки
+    2. Другое
+3. Тексты, формы, таблицы
+    1. Основные характеристики шрифта (размер, цвет, высота строки, название шрифта)
+    2. Ссылки
+    3. Другое
 
 ## Сборка проекта _(is working draft)_
 

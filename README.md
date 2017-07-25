@@ -184,47 +184,47 @@ mobile first structure
 // BLOCK VARIABLES BELOW
 
 @mixin {{name-block}}-xs(){
-/* {{name-block}} xs /
+/** {{name-block}} xs */
     .{{name-class}}{$END$}
 }
 @mixin {{name-block}}-sm(){
-/* {{name-block}} sm /
+/** {{name-block}} sm */
     .{{name-class}}{}
 }
 @mixin {{name-block}}-md(){
-/* {{name-block}} md /
+/** {{name-block}} md */
     .{{name-class}}{}
 }
 @mixin {{name-block}}-lg(){
-/* {{name-block}} lg /
+/** {{name-block}} lg */
     .{{name-class}}{}
 }
 @mixin {{name-block}}-xl(){
-/* {{name-block}} xl /
+/** {{name-block}} xl */
     .{{name-class}}{}
 }
 @mixin {{name-block}}-dev(){
-/* {{name-block}} dev /
+/** {{name-block}} dev */
     .{{name-class}}{}
 }
 @mixin {{name-block}}-mob(){
-/* {{name-block}} mob /
+/** {{name-block}} mob */
     .{{name-class}}{}
 }
 @mixin {{name-block}}-xso(){
-/* {{name-block}} xso /
+/** {{name-block}} xso */
     .{{name-class}}{}
 }
 @mixin {{name-block}}-smo(){
-/* {{name-block}} smo /
+/** {{name-block}} smo */
     .{{name-class}}{}
 }
 @mixin {{name-block}}-mdo(){
-/* {{name-block}} mdo /
+/** {{name-block}} mdo */
     .{{name-class}}{}
 }
 @mixin {{name-block}}-lgo(){
-/* {{name-block}} lgo /
+/** {{name-block}} lgo */
     .{{name-class}}{}
 }
 ```
@@ -247,47 +247,47 @@ Live-Template для PHPStorm:
 // BLOCK VARIABLES BELOW
 
 @mixin $PARAGRAPH$-xs(){
-/* $PARAGRAPH$ xs /
+/** $PARAGRAPH$ xs */
     .$NAME${$END$}
 }
 @mixin $PARAGRAPH$-sm(){
-/* $PARAGRAPH$ sm /
+/** $PARAGRAPH$ sm */
     .$NAME${}
 }
 @mixin $PARAGRAPH$-md(){
-/* $PARAGRAPH$ md /
+/** $PARAGRAPH$ md */
     .$NAME${}
 }
 @mixin $PARAGRAPH$-lg(){
-/* $PARAGRAPH$ lg /
+/** $PARAGRAPH$ lg */
     .$NAME${}
 }
 @mixin $PARAGRAPH$-xl(){
-/* $PARAGRAPH$ xl /
+/** $PARAGRAPH$ xl */
     .$NAME${}
 }
 @mixin $PARAGRAPH$-dev(){
-/* $PARAGRAPH$ dev /
+/** $PARAGRAPH$ dev */
     .$NAME${}
 }
 @mixin $PARAGRAPH$-mob(){
-/* $PARAGRAPH$ mob /
+/** $PARAGRAPH$ mob */
     .$NAME${}
 }
 @mixin $PARAGRAPH$-xso(){
-/* $PARAGRAPH$ xso /
+/** $PARAGRAPH$ xso */
     .$NAME${}
 }
 @mixin $PARAGRAPH$-smo(){
-/* $PARAGRAPH$ smo /
+/** $PARAGRAPH$ smo */
     .$NAME${}
 }
 @mixin $PARAGRAPH$-mdo(){
-/* $PARAGRAPH$ mdo /
+/** $PARAGRAPH$ mdo */
     .$NAME${}
 }
 @mixin $PARAGRAPH$-lgo(){
-/* $PARAGRAPH$ lgo /
+/** $PARAGRAPH$ lgo */
     .$NAME${}
 }
 ```

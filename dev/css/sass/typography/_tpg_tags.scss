@@ -10,9 +10,17 @@
 // @include tpg_tags-mdo();
 // @include tpg_tags-lgo();
 
+$e_tpg_tags: ();
+
+@function _tpg_tags($var) {
+    @return map_get($e_tpg_tags, $var);
+}
+
 @mixin tpg_tags-xs(){
 /** tpg_tags xs */
-
+    h1 {
+        color: #f00;
+    }
 }
 @mixin tpg_tags-sm(){
 /** tpg_tags sm */
@@ -53,33 +61,4 @@
 @mixin tpg_tags-lgo(){
 /** tpg_tags-lgo */
 
-}
-// BLOCK VARIABLES BELOW
-// fn tags
-$e_tags:(
-  c: color(empty),
-
-  bgc: bgc(empty),
-  bgi: bgi(empty),
-
-  w: width(empty),
-  h: height(empty),
-
-  fw: font(w,empty),
-  ff: font(f,empty),
-  fz: font(s,empty),
-  lh: font(lh,empty),
-
-  pl: ind(empty),
-  pr: ind(empty),
-  pt: ind(empty),
-  pb: ind(empty),
-
-  ml: ind(empty),
-  mr: ind(empty),
-  mt: ind(empty),
-  mb: ind(empty)
-);
-@function tags($var){
-    @return map_get($e_tags,$var);
 }

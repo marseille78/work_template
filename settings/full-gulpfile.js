@@ -5,7 +5,7 @@ var browserSync  = require('browser-sync').create(), host = 'test.dev';
 var concat       = require('gulp-concat');
 var cssnano       = require('gulp-cssnano');
 var uglify       = require('gulp-uglify');
-var spritesmith = require('gulp.spritesmith');
+var spritesmith = require('gulp.spritesmith');//+
 var plumber = require('gulp-plumber');
 //-----------------------------------
 var gulpif = require('gulp-if');
@@ -71,12 +71,7 @@ gulp.task('sprite', function() {
 });
 
 // Прослушивание
-var tasksBeforeWatch = [];
-
-tasksBeforeWatch.push('browserSync');
-tasksBeforeWatch.push('sass');
-tasksBeforeWatch.push('scripts');
-tasksBeforeWatch.push('styles');
+var tasksBeforeWatch = ['browserSync', 'sass', 'scripts', 'styles'];
 
 gulp.task('watch', tasksBeforeWatch, function () {
 	gulp.watch('./dev/css/**/*.scss', ['sass']);

@@ -1,5 +1,5 @@
 <?
-include 'php/functions.php';
+include_once 'php/functions.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +14,6 @@ include 'php/functions.php';
     <script src="/js/js.js"></script>
 </head>
 <body>
-        <?=render("page-".$_GET['page']); ?>
+        <?=render("page-".$var['index_page']); ?>
 </body>
 </html>

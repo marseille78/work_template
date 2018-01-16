@@ -7,7 +7,14 @@ global $_TPLPATH, //TODO: set constants
        $_PAGETPLPATH,
        $_VARS;
 
-include "config.php";
+$var=[
+    'index_page'=>'',
+];
+if(!empty($_GET['page'])){
+    $var['index_page'] = $_GET['page'];
+}
+
+ include_once "config.php";
 
 /**
  * TEMPLATE
@@ -18,7 +25,7 @@ include "config.php";
  * @param null $data
  * @return null|string
  */
-function render($tplName,$data=null,$cycle=null){
+function render($tplName,$data=null,$cycle=null){ // TODO: TRY TO CREATE PRETTY ECHO
     global $_TPLPATH, $_PAGETPLPATH, $_BASEPATH;
     $tpl = null;
     if(file_exists($_BASEPATH.'/'.$_TPLPATH.$tplName.'.php')){
@@ -26,40 +33,53 @@ function render($tplName,$data=null,$cycle=null){
     }elseif (file_exists($_BASEPATH.'/'.$_PAGETPLPATH.$tplName.'.php')){
         $tpl = $_BASEPATH.'/'.$_PAGETPLPATH.$tplName.'.php';
     }
+    // TODO: ? merge with default data $_VARS
     if(is_null($data)){
         $data = getVars($tplName);
     }
-
-//    if($tplName == 'sasscat_example2'){
-//
-//        var_dump($data);
-////        exit;
-//    }
-
 //    TODO: make debug
-//    if($tplName == 'sasscat_example2')
-//    debug(
-//        '
+//    if($tplName == 'block-smart-cart-item'){
+//        debug(
+//            '
 //        $tplName: '.print_r($tplName,true).'
 //        $data: '.print_r($data,true).'
 //        $cycle: '.print_r($cycle,true).'
 //        tplPath: '.print_r($tpl,true).'
 //        '
-//    );
+//        );
+//        exit;
+//    }
+
+    if(!empty($data['RETURN'])){
+        return $data['RETURN']."\n";
+    }
+    if(isset($data['file'])){
+        unset($data['file']);
+    }
+    if(isset($data['type']) && $data['type']==''){
+        unset($data['type']);
+    }
+
     if(!is_null($tpl)){
         ob_start();
         if(is_null($data) || (is_string($data) && empty($data))){
             $var = '';
             if(!is_null($cycle) && is_int($cycle)){
                 for($i=0;$i<$cycle;$i++){
-                    include $tpl;
+                    include_once $tpl;
                 }
             }else{
-                include $tpl;
+                include_once $tpl;
             }
         }else{
-//            if($tplName == 'sasscat_example2') var_dump($cycle);
-            if(!is_null($cycle) && is_int($cycle)){
+            if (!empty($data['type']) && file_exists($_BASEPATH . '/' . $_TPLPATH . $data['type'] . '.php')) {
+                $type = $data['type'];
+                unset($data['type']);
+                $data[0]['page'] = $tplName;
+                $vars = getVars($type)?getVars($type):[[]];//TODO: watch this part for righting
+                $data = [array_merge($vars[0],$data[0])];
+                echo render($type, $data);
+            } else if(!is_null($cycle) && is_int($cycle)){
                 for($i=0;$i<$cycle;$i++){
                     if(isset($data[$i]) && is_array($data[$i])){
                         if(empty($data[$i])){
@@ -76,13 +96,11 @@ function render($tplName,$data=null,$cycle=null){
                             $var = $data;
                         }
                     }
-                    include $tpl;
+                     include $tpl;
                 }
-            }else {
-//                var_dump($data);
+            } else {
                 if(is_array($data)){
                     foreach ($data as $var) {
-//                    if($tplName == 'sasscat_example') var_dump($var);
                         include $tpl;
                     }
                 }
@@ -90,7 +108,7 @@ function render($tplName,$data=null,$cycle=null){
         }
         $r = ob_get_contents();
         ob_end_clean();
-        return $r;
+        return $r."\n";
     }
     return null;
 }
@@ -110,12 +128,12 @@ function getVars($name){
  */
 function variable($var,$key){
     return isset($var[$key])
-    ? (empty($var[$key])
-        ? (is_array($var[$key])
-            ? []
-            : '' )
-        : $var[$key] )
-    : null;
+        ? (empty($var[$key])
+            ? (is_array($var[$key])
+                ? []
+                : '' )
+            : $var[$key] )
+        : null;
 }
 
 /**
@@ -125,10 +143,41 @@ function variable($var,$key){
  * @param string $type - type kind of templates
  * [full|]
  */
-function createTpls($type='page'){
+function createTpls($type='page'){ // TODO: optimize this function
     global $_TPLPATH, $_PAGETPLPATH, $_BASEPATH;
     $path_tpl = $_BASEPATH.'/html/'.$type.'/';
     switch ($type){
+        case 'full_page':
+            debug('tpl creation. mode: '.$type);
+            mkdir($path_tpl, 0777, true);
+            $dirs = scandir($_BASEPATH);
+            foreach ($dirs as $dir) {
+                if($dir == '.' || $dir == '..' || !preg_match('/page\-(.*)\.php/',$dir,$page))
+                    continue;
+
+                debug('start '.$dir);
+                $vars['page'] = getVars('page-'.$page[1]);
+                if(is_null($vars['page']))
+                    continue;
+
+                $vars['index'] = getVars('index');
+                $file = [
+                    'name'=>$page[1],
+                    'ext'=>'html',
+                ];
+                if(!empty($vars['page']['file'])){
+                    if(!empty($vars['page']['file']['ext'])){
+                        $file['ext']=$vars['page']['file']['ext'];
+                    }
+                    if(!empty($vars['page']['file']['name'])){
+                        $file['name']=$vars['page']['file']['name'];
+                    }
+                }
+                $vars = [array_merge_recursive(array('index_page'=>$page[1]),$vars['index'][0],$vars['page'][0])];
+                $html = render('index',$vars);
+                file_put_contents($path_tpl.$file['name'].'.'.$file['ext'],$html);
+            }
+            break;
         case 'page':
             debug('tpl creation. mode: '.$type);
             mkdir($path_tpl, 0777, true);
@@ -137,9 +186,24 @@ function createTpls($type='page'){
                 if($dir == '.' || $dir == '..' || !preg_match('/page\-(.*)\.php/',$dir,$page))
                     continue;
 
-                $url = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/?page='.$page[1];
-                $html = file_get_contents($url);
-                file_put_contents($path_tpl.'page-'.$page[1].'.html',$html);
+                $vars['page'] = getVars('page-'.$page[1]);
+                if(is_null($vars['page']))
+                    continue;
+
+                $file = [
+                    'name'=>$page[1],
+                    'ext'=>'html',
+                ];
+                if(!empty($vars['page']['file'])){
+                    if(!empty($vars['page']['file']['ext'])){
+                        $file['ext']=$vars['page']['file']['ext'];
+                    }
+                    if(!empty($vars['page']['file']['name'])){
+                        $file['name']=$vars['page']['file']['name'];
+                    }
+                }
+                $html = render('page-'.$page[1]);
+                file_put_contents($path_tpl.$file['name'].'.'.$file['ext'],$html);
             }
             break;
         case 'layers':
@@ -147,36 +211,94 @@ function createTpls($type='page'){
             mkdir($path_tpl, 0777, true);
             $dirs = scandir($_BASEPATH.'/'.$_TPLPATH);
             foreach ($dirs as $dir) {
-                if($dir == '.' || $dir == '..')
+                if($dir == '.' || $dir == '..' || is_dir($dir))
                     continue;
 
-                $html = render(preg_replace('/\.php/','',$dir));
-                file_put_contents($path_tpl.$dir.'.html',$html);
+                $dir = preg_replace('/\.php/','',$dir);
+                $vars['layer'] = getVars($dir);
+                if(is_null($vars['layer']))
+                    continue;
+
+                $file = [
+                    'name'=>$dir,
+                    'ext'=>'html',
+                ];
+                if(!empty($vars['page']['file'])){
+                    if(!empty($vars['page']['file']['ext'])){
+                        $file['ext']=$vars['page']['file']['ext'];
+                    }
+                    if(!empty($vars['page']['file']['name'])){
+                        $file['name']=$vars['page']['file']['name'];
+                    }
+                }
+                $html = render($dir);
+                file_put_contents($path_tpl.$file['name'].'.'.$file['ext'],$html);
             }
             break;
-        case 'triple':
+        case 'classic':
             debug('tpl creation. mode: '.$type);
             mkdir($path_tpl, 0755, true);
-            $dirs = scandir($_BASEPATH.'/'.$_TPLPATH);
-            foreach ($dirs as $dir) {
-                if($dir == 'static_top.php' || $dir == 'static_bottom.php'){
-                    $html = render(preg_replace('/\.php/','',$dir));
-                    file_put_contents($path_tpl.$dir.'.html',$html);
-                }
-            }
             $dirs = scandir($_BASEPATH);
             foreach ($dirs as $dir) {
-                if(preg_match('/page\-.*\.php/',$dir)){
-                    $html = render(preg_replace('/\.php/','',$dir));
-                    file_put_contents($path_tpl.$dir.'.html',$html);
+                if($dir == '.' || $dir == '..' || !preg_match('/page\-(.*)\.php/',$dir,$page))
+                    continue;
+
+                $vars['page'] = getVars('page-'.$page[1]);
+                if(is_null($vars['page']))
+                    continue;
+
+                if(!empty($vars['page']['file']) && !empty($vars['page']['file']['skip']) && ($vars['page']['file']['skip']==1||$vars['page']['file']['skip']==true))
+                    continue;
+
+                $file = [
+                    'name'=>$page[1],
+                    'ext'=>'html',
+                ];
+                if(!empty($vars['page']['file'])){
+                    if(!empty($vars['page']['file']['ext'])){
+                        $file['ext']=$vars['page']['file']['ext'];
+                    }
+                    if(!empty($vars['page']['file']['name'])){
+                        $file['name']=$vars['page']['file']['name'];
+                    }
                 }
+                $html = render('page-'.$page[1]);
+                file_put_contents($path_tpl.$file['name'].'.'.$file['ext'],$html);
+            }
+            $dirs = scandir($_BASEPATH.'/'.$_TPLPATH);
+            foreach ($dirs as $dir) {
+                if($dir == '.' || $dir == '..' || is_dir($dir))
+                    continue;
+
+                $dir = preg_replace('/\.php/','',$dir);
+                $vars['layer'] = getVars($dir);
+                if(is_null($vars['layer']))
+                    continue;
+
+                if(!empty($vars['layer']['file']) && !empty($vars['layer']['file']['skip']) && ($vars['layer']['file']['skip']==1||$vars['layer']['file']['skip']==true))
+                    continue;
+
+                $file = [
+                    'name'=>$dir,
+                    'ext'=>'html',
+                ];
+                if(!empty($vars['layer']['file'])){
+                    if(!empty($vars['layer']['file']['ext'])){
+                        $file['ext']=$vars['layer']['file']['ext'];
+                    }
+                    if(!empty($vars['layer']['file']['name'])){
+                        $file['name']=$vars['layer']['file']['name'];
+                    }
+                }
+                $html = render($dir);
+                file_put_contents($path_tpl.$file['name'].'.'.$file['ext'],$html);
             }
             break;
     }
 }
 
 function debug($m){
-    echo '<pre>';
+    echo "\n".'<pre>'."\n";
     print_r($m);
-    echo '</pre>';
+    echo "\n".'</pre>'."\n";
 }

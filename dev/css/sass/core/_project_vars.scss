@@ -3,31 +3,38 @@
 
 // FN font
 $g_FontWeight:(
-        xthink:200,
-        think:300,
-        regular:400,
-        medium:500,
-        sbold:600,
-        bold:700,
-        xbold:900
+    xthink:200,
+    think:300,
+    regular:400,
+    medium:500,
+    sbold:600,
+    bold:700,
+    xbold:900
 );
-$g_FontFamely:(
-        base: "Arial, sana-serif"
+$g_FontFamily:(
+    base: ("Arial", sana-serif)
 );
 $g_LineHeight:(
-
+    base: 1.5
 );
 $g_FontSize:(
-
+    base: 14px,
+    h1: 28px,
+    h2: 24px,
+    h3: 22px,
+    h4: 18px,
+    h5: 16px,
+    h6: 14px,
 );
 
 // FN color
 $g_Color:(
-        // DEF
-        accent: #006dff,
-        border: #f7f7fe,
-        link: #006dff,
-        // OTHER
+    // DEF
+    text: #000,
+    accent: #006dff,
+    border: #bbb,
+    link: #006dff,
+    // OTHER
 );
 
 // FN width
@@ -42,19 +49,27 @@ $g_Height:(
 
 // FN size - global edit
 $g_Size:(
-        // DEF
-        bdrs: 0px
-        // OTHER
+    // DEF
+    bdrs: 0px
+    // OTHER
 );
 
 // FN ind
 $g_Indentations:(
-
+    h1: 0.67em 0,
+    h2: 0.67em 0,
+    h3: 0.67em 0,
+    h4: 0.67em 0,
+    h5: 0.67em 0,
+    h6: 0.67em 0,
+    p: 10px 0,
 );
 
 // FN bgc
 $g_BgColors:(
-
+    body: #fff,
+    input: #fff,
+    button: #ccc,
 );
 
 // FN bgi

@@ -1,0 +1,62 @@
+// @include forms-xs();
+// @include forms-sm();
+// @include forms-md();
+// @include forms-lg();
+// @include forms-xl();
+// @include forms-dev();
+// @include forms-mob();
+// @include forms-xso();
+// @include forms-smo();
+// @include forms-mdo();
+// @include forms-lgo();
+
+$e_forms: ();
+
+@function _forms($var) {
+    @return map_get($e_forms, $var);
+}
+
+@mixin forms-xs(){
+/** forms-xs */
+
+}
+@mixin forms-sm(){
+/** forms-sm */
+
+}
+@mixin forms-md(){
+/** forms-md */
+
+}
+@mixin forms-lg(){
+/** forms-lg */
+
+}
+@mixin forms-xl(){
+/** forms-xl */
+
+}
+@mixin forms-dev(){
+    /** forms-dev */
+
+}
+@mixin forms-mob(){
+/** forms-mob */
+
+}
+@mixin forms-xso(){
+    /** forms-xso */
+
+}
+@mixin forms-smo(){
+/** forms-smo */
+
+}
+@mixin forms-mdo(){
+/** forms-mdo */
+
+}
+@mixin forms-lgo(){
+/** forms-lgo */
+
+}

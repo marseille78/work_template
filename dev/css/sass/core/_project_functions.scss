@@ -64,6 +64,6 @@
     @return map_get($g_LineHeight,$var);
   }
   @if $fn == ff{
-    @return map_get($g_FontFamely,$var);
+    @return map_get($g_FontFamily,$var);
   }
 }

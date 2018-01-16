@@ -1,14 +1,14 @@
 var gulp         = require('gulp');
 var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
-var browserSync  = require('browser-sync').create(), host = 'test.dev';
+var browserSync  = require('browser-sync').create(), host = 'test';
 var concat       = require('gulp-concat');
 var cssnano       = require('gulp-cssnano');
 var uglify       = require('gulp-uglify');
+var svgstore = require('gulp-svgstore');
+var svgmin = require('gulp-svgmin');
 var spritesmith = require('gulp.spritesmith');//+
 var plumber = require('gulp-plumber');
-//-----------------------------------
-var gulpif = require('gulp-if');
 
 var paths = {
 	devDir: 'dev/',
@@ -24,8 +24,7 @@ var libsJS = [];
 gulp.task('browserSync', ['styles', 'scripts'], function() {
 	browserSync.init({
 		proxy: host,//используемый домен локального хостинга
-		port: 3000,
-		notify: false
+		port: 3000
 	});
 });
 
@@ -68,6 +67,19 @@ gulp.task('sprite', function() {
         }));
     spriteData.img.pipe(gulp.dest(paths.imgDir)); // Path to save image
     spriteData.css.pipe(gulp.dest(paths.sassDir + 'other/')); // Path to save styles
+});
+
+// SVG-Sprites (Создание SVG-спрайтов)
+// Собирает svg-спрайт, разделяя отдельные элементы по тегам <symbol> с идентификаторами, соответствующими названиям
+// svg-файлов. Вызываются при помощи тега <use>
+gulp.task('symbols', function() {
+    return gulp.src(paths.img + 'svg/*.svg')
+        .pipe(svgmin())
+        .pipe(svgstore({
+            inlineSvg: true// Вырезает из svg-файлов лишнюю информацию
+        }))
+        .pipe(rename('symbols.svg'))
+        .pipe(gulp.dest(paths.devDir + 'img/'));
 });
 
 // Прослушивание

@@ -28,23 +28,117 @@
 
 Для стилизации проекта за основу выбран препроцессор SCSS (для удобства дебаггинга версии не ниже 3.3). на каждый блок должен быть создан отдельный файл который именуется так же как и параграф этого блока.
 
-Для шаблонизации HTML-структтуры принят язык программирования PHP
+Для шаблонизации HTML-структуры принят язык программирования PHP
 
 ## Организация CSS
+
+Основной файл стилей должен собираться из стилевых файлов файлов общего плана и отдельных блоков, которые именуются 
+следующим образом:
+
+__*[название категории]-[название блока]*__
+
+### Создание SCSS-файла для блока
 
 Внутри файла стилей должна быть организована базовая конструкция файла, в каждом разделе которого создается миксин, который должен называться по имени файла. А для адаптивной верстки: __*[имя файла]-[название периода viewport'a]*__ стили которого в нем находяться. (например: `block-adaptive-md`).
 
 Стили под каждое разрешение экрана оборачиваются в соответствующие миксины, которые затем подключаются в нужных местах базового файла **`./css/scss/css.scss`**
 
+**Положения по использованию переменных в блоках:**
+
+* Переменные, используемые в блоках, непосредственно в них и объявляются, группируются в *map* с именем __*$e_[имя файла]*__, из которого мы получаем эти данные при помощи функции __*_[имя файла]*__
+* Локальные мапы с функциями для получения значений объявляем вверху файла, перед определениями стилей
+* При использовании глобальных переменных в отдельно взятых блоках, они переопределяются в переменные местного значения
+* В локальных переменных допускается использование значений из палитры цветов `$colorMap`
+* Локальная переменная создается при использовании значения не менее 2-х раз
+
+**Пример создания набора переменных для отдельно-взятого блока с функцией получения значения из этого набора:**
+
+```php
+$e_{{file-name}}:(
+    key: value
+);
+
+@function _{{file-name}}($var){
+    @return map_get($e_{{file-name}}, $var);
+}
+```
+
 **Общая рекомендация** - по возможности не дублировать классы на уровне одного файла, дублированные стили группировать при помощи плейсхолдеров.
 
 По возможности группировать общие локальные стили в локальные плейсхолдеры
 
+Пример использования на основе Live-Template для PHPStorm:
+
+```scss
+// @include $BLOCK$-xs();
+// @include $BLOCK$-sm();
+// @include $BLOCK$-md();
+// @include $BLOCK$-lg();
+// @include $BLOCK$-xl();
+// @include $BLOCK$-dev();
+// @include $BLOCK$-mob();
+// @include $BLOCK$-xso();
+// @include $BLOCK$-smo();
+// @include $BLOCK$-mdo();
+// @include $BLOCK$-lgo();
+
+$$e_$BLOCK$: ();
+
+@function _$BLOCK$($$var) {
+    @return map_get($$e_$BLOCK$, $$var);
+}
+
+@mixin $BLOCK$-xs(){
+/** $BLOCK$-xs */
+    .$CLASS$ {
+        $END$
+    }
+}
+@mixin $BLOCK$-sm(){
+/** $BLOCK$-sm */
+    .$CLASS$ {}
+}
+@mixin $BLOCK$-md(){
+/** $BLOCK$-md */
+    .$CLASS$ {}
+}
+@mixin $BLOCK$-lg(){
+/** $BLOCK$-lg */
+    .$CLASS$ {}
+}
+@mixin $BLOCK$-xl(){
+/** $BLOCK$-xl */
+    .$CLASS$ {}
+}
+@mixin $BLOCK$-dev(){
+    /** $BLOCK$-dev */
+    .$CLASS$ {}
+}
+@mixin $BLOCK$-mob(){
+/** $BLOCK$-mob */
+    .$CLASS$ {}
+}
+@mixin $BLOCK$-xso(){
+    /** $BLOCK$-xso */
+    .$CLASS$ {}
+}
+@mixin $BLOCK$-smo(){
+/** $BLOCK$-smo */
+    .$CLASS$ {}
+}
+@mixin $BLOCK$-mdo(){
+/** $BLOCK$-mdo */
+    .$CLASS$ {}
+}
+@mixin $BLOCK$-lgo(){
+/** $BLOCK$-lgo */
+    .$CLASS$ {}
+}
+```
+
 ### Структура базового CSS-файла
 
-Базовая конструкция основного файла css должна иметь вид:
-
-Структуру комментариев:
+Базовая конструкция основного файла css должна иметь структуру комментариев:
 
 ```scss
 1. Разделы. Например:
@@ -166,148 +260,24 @@ mobile first structure
 // CATEGORY [ИМЯ КАТЕГОРИИ] END
 ```
 
-### Создание SCSS-файла для блока
-
-```scss
-// @include {{name-block}}-xs();
-// @include {{name-block}}-sm();
-// @include {{name-block}}-md();
-// @include {{name-block}}-lg();
-// @include {{name-block}}-xl();
-// @include {{name-block}}-dev();
-// @include {{name-block}}-mob();
-// @include {{name-block}}-xso();
-// @include {{name-block}}-smo();
-// @include {{name-block}}-mdo();
-// @include {{name-block}}-lgo();
-
-// BLOCK VARIABLES BELOW
-
-@mixin {{name-block}}-xs(){
-/** {{name-block}} xs */
-    .{{name-class}}{$END$}
-}
-@mixin {{name-block}}-sm(){
-/** {{name-block}} sm */
-    .{{name-class}}{}
-}
-@mixin {{name-block}}-md(){
-/** {{name-block}} md */
-    .{{name-class}}{}
-}
-@mixin {{name-block}}-lg(){
-/** {{name-block}} lg */
-    .{{name-class}}{}
-}
-@mixin {{name-block}}-xl(){
-/** {{name-block}} xl */
-    .{{name-class}}{}
-}
-@mixin {{name-block}}-dev(){
-/** {{name-block}} dev */
-    .{{name-class}}{}
-}
-@mixin {{name-block}}-mob(){
-/** {{name-block}} mob */
-    .{{name-class}}{}
-}
-@mixin {{name-block}}-xso(){
-/** {{name-block}} xso */
-    .{{name-class}}{}
-}
-@mixin {{name-block}}-smo(){
-/** {{name-block}} smo */
-    .{{name-class}}{}
-}
-@mixin {{name-block}}-mdo(){
-/** {{name-block}} mdo */
-    .{{name-class}}{}
-}
-@mixin {{name-block}}-lgo(){
-/** {{name-block}} lgo */
-    .{{name-class}}{}
-}
-```
-
-Live-Template для PHPStorm:
-
-```scss
-// @include $PARAGRAPH$-xs();
-// @include $PARAGRAPH$-sm();
-// @include $PARAGRAPH$-md();
-// @include $PARAGRAPH$-lg();
-// @include $PARAGRAPH$-xl();
-// @include $PARAGRAPH$-dev();
-// @include $PARAGRAPH$-mob();
-// @include $PARAGRAPH$-xso();
-// @include $PARAGRAPH$-smo();
-// @include $PARAGRAPH$-mdo();
-// @include $PARAGRAPH$-lgo();
-
-// BLOCK VARIABLES BELOW
-
-@mixin $PARAGRAPH$-xs(){
-/** $PARAGRAPH$ xs */
-    .$NAME${$END$}
-}
-@mixin $PARAGRAPH$-sm(){
-/** $PARAGRAPH$ sm */
-    .$NAME${}
-}
-@mixin $PARAGRAPH$-md(){
-/** $PARAGRAPH$ md */
-    .$NAME${}
-}
-@mixin $PARAGRAPH$-lg(){
-/** $PARAGRAPH$ lg */
-    .$NAME${}
-}
-@mixin $PARAGRAPH$-xl(){
-/** $PARAGRAPH$ xl */
-    .$NAME${}
-}
-@mixin $PARAGRAPH$-dev(){
-/** $PARAGRAPH$ dev */
-    .$NAME${}
-}
-@mixin $PARAGRAPH$-mob(){
-/** $PARAGRAPH$ mob */
-    .$NAME${}
-}
-@mixin $PARAGRAPH$-xso(){
-/** $PARAGRAPH$ xso */
-    .$NAME${}
-}
-@mixin $PARAGRAPH$-smo(){
-/** $PARAGRAPH$ smo */
-    .$NAME${}
-}
-@mixin $PARAGRAPH$-mdo(){
-/** $PARAGRAPH$ mdo */
-    .$NAME${}
-}
-@mixin $PARAGRAPH$-lgo(){
-/** $PARAGRAPH$ lgo */
-    .$NAME${}
-}
-```
-
 ### Использование переменных
 
-Переменные проекта должны использовать в названии _`camelCamp`_. Название глобальной основной переменной выглядит так: _`$g_varName`_.
+Переменные проекта должны использовать в названии _`camelCamp`_. Название глобальной/основной переменной имеет 
+приставку `g_` и выглядит следующим образом: _`$g_varName`_.
 
-Для удобства стоит группировать переменные в мапы и создавать функции с соответствующими названиями для простоты их использования.
+Глобальные переменные также стоит группировать в мапы и создавать функции с соответствующими названиями для 
+простоты их использования.
 
 Например: 
 
-* _`/project/_project_vars.scss`_
+* _`/css/sass/core/_project_vars.scss`_
 ```scss
 $g_Fonts:(
-        base: "'proxima-nova',Helvetica,Arial,sans-serif",
-        second: "Georgia, 'Times New Roman', Times, serif"
+        base: ('proxima-nova',Helvetica,Arial,sans-serif),
+        second: (Georgia, 'Times New Roman', Times, serif)
 );
 ```
-* _`/project/_project_functions.`_ (**!!! Названия ф-й для получения базовой глобальной переменной должны начинаться с `_`**)
+* _`/css/sass/core/_project_functions.`_ (**!!! Названия ф-й для получения переменной должны начинаться с `_`**)
 ```scss
 @function _font($var){
   @return map_get($g_fonts,$var);
@@ -350,43 +320,7 @@ $g_Fonts:(
     * `btn-hover` - фоновый цвет базовых кнопок при наведении
     * `line` - фоновый цвет блоков разделителей
 
-**Положения по использованию переменных в блоках:**
-
-* Переменные, используемые в блоках, непосредственно в них и объявляются
-* При использовании глобальных переменных в отдельно взятых облоках, они переопределяются в переменные местного значения
-* В локальных переменных допускается использование значений из палитры цветов `$colorMap`
-* Локальная переменная создается при использовании значения не менее 2-х раз
-* Локальные стили объединяем в локальные мапы с именем `$e_[имя-файла]`
-* Локальные мапы с функциями для получения значений объявляем вверху файла, перед определениями стилей
-
-**Пример создания набора переменных для отдельно-взятого блока с функцией получения значения из этого набора:**
-
-```php
-$e_{{file-name}}:(
-    key: value
-);
-
-@function {{file-name}}($var){
-    @return map_get($e_{{file-name}}, $var);
-}
-```
-
-**Вероятный вариант LiveTemplate для PHPStorm:**
-
-```php
-// fn $BLOCKFNNAME$
-$USD$e_$VARNAME$:(
-// _color(){$USD$g_Colors},_bgc(){$USD$g_BackgroundColors},
-// _bgi(){$USD$g_BackgroundImages},_width(){$USD$g_Width},_height(){$USD$g_Height},
-// _font([w|f|s|lh],key){$USD$g_FontWeight|Size|Famely|LineHeight},_ind(){$USD$g_Indentations},
-
-);
-@function $BLOCKFNNAME$($USD$var){
-    @return map_get($USD$e_$VARNAME$,$USD$var);
-}
-```
-
-**Базовые scss-функции для получения значений переменных:**
+**Базовые scss-функции для получения значений глобальных переменных:**
 
 * `_palette([name-color])` - Для получения значения из палитры цветов `$colorMap`, используемых на сайте
 * `_color([name-color])` - Для получения значения из набора основных цветов
@@ -593,7 +527,7 @@ _page-[class-name].scss
 
 Комментарии пишутся с двойным слешем, чтобы они не рендерились. При вставке один слеш убираем для его отображения в результирующем коде.
 
-Все нетипичные заготовленные блоки должны храниться в своем файле (**_`/core/mixins/_[cat-name]-[mixin-name].scss`_**) и подключаються _`(@import)`_ в заглавный файл для миксинов (**_`/core/_project_mixins.scss`_**) и первое слово миксина должно содержать **название роздела** в котором он находиться.
+Все нетипичные заготовленные блоки должны храниться в своем файле (**_`/core/base/mixins/_[cat-name]-[mixin-name].scss`_**) и подключаються _`(@import)`_ в заглавный файл для миксинов (**_`/core/base/_project_mixins.scss`_**) и первое слово миксина должно содержать **название роздела** в котором он находиться.
 
 Например:
 
@@ -636,77 +570,81 @@ _page-[class-name].scss
 
 1. Создаем файл в _`/core/placeholders/elements/`_
 2. Заготовка (содержание файла _`css/sass/core/placeholders/elements/_pl-example2.scss`_):
-```scss
-// @include pl_{{name-placeholder}}-xs;
-// @include pl_{{name-placeholder}}-sm;
-// @include pl_{{name-placeholder}}-md;
-// @include pl_{{name-placeholder}}-lg;
-// @include pl_{{name-placeholder}}-xl;
-// @include pl_{{name-placeholder}}-xso;
-// @include pl_{{name-placeholder}}-mob;
-// @include pl_{{name-placeholder}}-dev;
-// @include pl_{{name-placeholder}}-smo;
-// @include pl_{{name-placeholder}}-mdo;
-// @include pl_{{name-placeholder}}-lgo;
 
-@mixin pl_{{name-placeholder}}{
+Образец на примере __*LiveTemplate*__ для __*PHP-Storm*__:
+
+```scss
+// @include pl_$PLACEHOLDER$-xs;
+// @include pl_$PLACEHOLDER$-sm;
+// @include pl_$PLACEHOLDER$-md;
+// @include pl_$PLACEHOLDER$-lg;
+// @include pl_$PLACEHOLDER$-xl;
+// @include pl_$PLACEHOLDER$-xso;
+// @include pl_$PLACEHOLDER$-mob;
+// @include pl_$PLACEHOLDER$-dev;
+// @include pl_$PLACEHOLDER$-smo;
+// @include pl_$PLACEHOLDER$-mdo;
+// @include pl_$PLACEHOLDER$-lgo;
+
+@mixin pl_$PLACEHOLDER${
   //some css was here
+  $END$
 }
 
 //---------------------------//
-@mixin pl_{{name-placeholder}}-xs{
-  %pl_{{name-placeholder}}-xs{
-    @include pl_{{name-placeholder}};
+@mixin pl_$PLACEHOLDER$-xs{
+  %pl_$PLACEHOLDER$-xs{
+    @include pl_$PLACEHOLDER$;
   }
 }
-@mixin pl_{{name-placeholder}}-sm{
-  %pl_{{name-placeholder}}-sm{
-    @include pl_{{name-placeholder}};
+@mixin pl_$PLACEHOLDER$-sm{
+  %pl_$PLACEHOLDER$-sm{
+    @include pl_$PLACEHOLDER$;
   }
 }
-@mixin pl_{{name-placeholder}}-md{
-  %pl_{{name-placeholder}}-md{
-    @include pl_{{name-placeholder}};
+@mixin pl_$PLACEHOLDER$-md{
+  %pl_$PLACEHOLDER$-md{
+    @include pl_$PLACEHOLDER$;
   }
 }
-@mixin pl_{{name-placeholder}}-lg{
-  %pl_{{name-placeholder}}-lg{
-    @include pl_{{name-placeholder}};
+@mixin pl_$PLACEHOLDER$-lg{
+  %pl_$PLACEHOLDER$-lg{
+    @include pl_$PLACEHOLDER$;
   }
 }
-@mixin pl_{{name-placeholder}}-xl{
-  %pl_{{name-placeholder}}-xl{
-    @include pl_{{name-placeholder}};
+@mixin pl_$PLACEHOLDER$-xl{
+  %pl_$PLACEHOLDER$-xl{
+    @include pl_$PLACEHOLDER$;
   }
 }
-@mixin pl_{{name-placeholder}}-xso{
-  %pl_{{name-placeholder}}-xso{
-    @include pl_{{name-placeholder}};
+@mixin pl_$PLACEHOLDER$-xso{
+  %pl_$PLACEHOLDER$-xso{
+    @include pl_$PLACEHOLDER$;
   }
 }
-@mixin pl_{{name-placeholder}}-mob{
-  %pl_{{name-placeholder}}-mob{
-    @include pl_{{name-placeholder}};
+@mixin pl_$PLACEHOLDER$-mob{
+  %pl_$PLACEHOLDER$-mob{
+    @include pl_$PLACEHOLDER$;
   }
 }
-@mixin pl_{{name-placeholder}}-dev{
-  %pl_{{name-placeholder}}-dev{
-    @include pl_{{name-placeholder}};
+@mixin pl_$PLACEHOLDER$-dev{
+  %pl_$PLACEHOLDER$-dev{
+    @include pl_$PLACEHOLDER$;
   }
 }
-@mixin pl_{{name-placeholder}}-smo{
-  %pl_{{name-placeholder}}-smo{
-    @include pl_{{name-placeholder}};
+@mixin pl_$PLACEHOLDER$-smo{
+  %pl_$PLACEHOLDER$-smo{
+    @include pl_$PLACEHOLDER$;
   }
 }
-@mixin pl_{{name-placeholder}}-mdo{
-  %pl_{{name-placeholder}}-mdo{
-    @include pl_{{name-placeholder}};
+@mixin pl_$PLACEHOLDER$-mdo{
+  %pl_$PLACEHOLDER$-mdo{
+    @include pl_$PLACEHOLDER$;
   }
 }
-@mixin pl_{{name-placeholder}}-lgo{
-  %pl_{{name-placeholder}}-lgo{
-    @include pl_{{name-placeholder}};
+@mixin pl_$PLACEHOLDER$-lgo{
+  %pl_$PLACEHOLDER$-lgo{
+    @include pl_$PLACEHOLDER$;
   }
 }
 ```
@@ -874,7 +812,7 @@ include 'php/functions.php';
 <!-- page-example END -->
 ```
 
-**Вероятный вариант LiveTemplate для PHPStorm:**
+**Пример на основе LiveTemplate для PHPStorm:**
 
 ```php
 <?=render('$VAR$',variable($var,'data_$VAR$')); ?>
@@ -908,9 +846,11 @@ variable($var, 'data')
 
 Привер содержимого шаблона:
 ```php
+<!-- NAME_BLOCK START -->
 ...
 HTML-code
 ...
+<!-- NAME_BLOCK END -->
 ```
 
 **Вероятный вариант LiveTemplate для PHPStorm:**
@@ -927,20 +867,22 @@ $END$
 <!-- $FILENAME$ END -->
 ```
 
-**Вероятный вариант LiveTemplate для PHPStorm для описания параметров для переменной типа `array`:**
+В начле шаблона блока описываем используемые переменные и где они будут рендериться
+
+**Рекомендуемый вариант LiveTemplate для PHPStorm для описания параметров для переменной типа `array`:**
 
 ```php
 @param array 'data_$END$'
 ```
 
-**Вероятный вариант LiveTemplate для PHPStorm для описания параметров для переменной в цикле:**
+**Рекомендуемый вариант LiveTemplate для PHPStorm для описания параметров для переменной в цикле:**
 
 ```php
 @param string 'for_$NAME$_start'
 * @param string 'for_$NAME$_end'
 ```
 
-**Вероятный вариант LiveTemplate для PHPStorm для описания параметров для переменной с условием if:**
+**Рекомендуемый вариант LiveTemplate для PHPStorm для описания параметров для переменной с условием if:**
 
 ```php
 @param bool 'use_$NAME$'
@@ -948,7 +890,7 @@ $END$
 * @param string 'if_$NAME$_end'
 ```
 
-**Вероятный вариант LiveTemplate для PHPStorm для описания параметров для переменной с условием if-else:**
+**Рекомендуемый вариант LiveTemplate для PHPStorm для описания параметров для переменной с условием if-else:**
 
 ```php
 @param bool 'use_$NAME$'
@@ -989,7 +931,7 @@ $END$
 <? } ?>
 ```
 
-**Вероятный вариант LiveTemplate для PHPStorm:**
+**Рекомендуемый вариант LiveTemplate для PHPStorm:**
 
 ```php
 <? if(variable($var,'use_$VAR$')){ ?>
@@ -1013,7 +955,7 @@ $END$
 <?=variable($var,'if_{{var-name}}_end'); ?>
 ```
 
-**Вероятный вариант LiveTemplate для PHPStorm:**
+**Рекомендуемый вариант LiveTemplate для PHPStorm:**
 
 ```php
 <?=variable($var,'if_$VAR$_start'); ?>
@@ -1035,7 +977,7 @@ $END$
 <?=variable($var,'for_{{file-name}}_end'); ?>
 ```
 
-**Вероятный вариант LiveTemplate для PHPStorm:**
+**Рекомендуемый вариант LiveTemplate для PHPStorm:**
 
 ```php
 <?=variable($var,'for_$VAR$_start'); ?>
@@ -1093,7 +1035,7 @@ $_VARS['sasscat_example'] = [
 ]
 ```
 
-**Вероятный вариант LiveTemplate для PHPStorm для создания данных для файла в файле `php/config.php`:**
+**Рекомендуемый вариант LiveTemplate для PHPStorm для создания данных для файла в файле `php/config.php`:**
 
 ```php
 $_VARS['$FILE$'] = [
@@ -1119,7 +1061,7 @@ $_VARS['$FILE$'] = [
 ],
 ```
 
-**Вероятный вариант LiveTemplate для PHPStorm для создания данных для полей данных в файле `php/config.php`:**
+**Рекомендуемый вариант LiveTemplate для PHPStorm для создания данных для полей данных в файле `php/config.php`:**
 
 ```php
 '$DATA$'=>[
@@ -1203,7 +1145,7 @@ ini_set('display_errors', 1);
 
 ## Сборка проекта _(is working draft)_
 
-В качестве сборщика проекта используем *task-manager* **Gulp** `__var5_gulpfile.js` с соответствующими настройками прилагается
+В качестве сборщика проекта используем *task-manager* **Gulp** `gulpfile.js` с соответствующими настройками прилагается
 
 Используемые плагины:
 
@@ -1215,4 +1157,4 @@ ini_set('display_errors', 1);
 * _`gulp-uglify`_ - для минификации JS-файлов
 * _`gulp.spritesmith`_ - для создания спрайтов изображений. Использовать в группе с имеющимся миксином (файл _`_blocks_icon.scss`_)
 
-Файлы конфигурации (`package.json`, `__var5_gulpfile.js`) находятся в корне проекта. Непосредственно файлы разработки находятся в директории `dev`, которая также находится в корне.
+Файлы конфигурации (`package.json`, `gulpfile.js`) находятся в корне проекта. Непосредственно файлы разработки находятся в директории `dev`, которая также находится в корне.
